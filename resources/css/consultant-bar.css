@@ -1,0 +1,225 @@
+/* Consultant Bar Component Styles */
+.consultant-bar {
+    position: relative;
+    height: 116px;
+    width: 100%;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.consultant-bar-background {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: 1;
+}
+
+.consultant-bar-background img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    object-position: center;
+}
+
+.consultant-bar-content {
+    position: relative;
+    z-index: 10;
+    width: 100%;
+    max-width: 1440px;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 30px;
+}
+
+/* Opening Hours - Left Side */
+.opening-hours {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.opening-hours .icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.opening-hours .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.opening-hours .text {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000000;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+}
+
+/* Center CTA Button */
+.consultant-cta {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.consultant-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 342px;
+    max-width: 342px;
+    height: 56px;
+    background-color: #E62D5B;
+    color: #FFFFFF;
+    text-decoration: none;
+    border-radius: 100px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+    text-align: center;
+    padding: 0 20px;
+    box-sizing: border-box;
+}
+
+.consultant-btn:hover {
+    background-color: #c91e47;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(230, 45, 91, 0.3);
+}
+
+.consultant-btn:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 6px rgba(230, 45, 91, 0.3);
+}
+
+/* Contact Info - Right Side */
+.contact-info {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+}
+
+.contact-item .icon {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+}
+
+.contact-item .icon img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+}
+
+.contact-item .text {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000000;
+    flex: none;
+    order: 1;
+    flex-grow: 0;
+    white-space: nowrap;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .consultant-bar-content {
+        padding: 0 20px;
+    }
+
+    .consultant-btn {
+        width: 280px;
+        max-width: 280px;
+        font-size: 16px;
+    }
+
+    .opening-hours .text,
+    .contact-item .text {
+        font-size: 16px;
+    }
+
+    .contact-info {
+        gap: 20px;
+    }
+}
+
+@media screen and (max-width: 900px) {
+    .consultant-bar {
+        height: auto;
+        min-height: 116px;
+        padding: 20px 0;
+    }
+
+    .consultant-bar-content {
+        flex-direction: column;
+        gap: 20px;
+        padding: 0 15px;
+    }
+
+    .opening-hours,
+    .consultant-cta,
+    .contact-info {
+        width: 100%;
+        justify-content: center;
+    }
+
+    .consultant-btn {
+        width: 100%;
+        max-width: 342px;
+    }
+
+    .contact-info {
+        gap: 15px;
+    }
+}
+
+@media screen and (max-width: 600px) {
+
+    .opening-hours .text,
+    .contact-item .text {
+        font-size: 14px;
+    }
+
+    .consultant-btn {
+        font-size: 14px;
+        height: 48px;
+    }
+
+    .opening-hours .icon,
+    .contact-item .icon {
+        width: 24px;
+        height: 24px;
+    }
+
+    .contact-info {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

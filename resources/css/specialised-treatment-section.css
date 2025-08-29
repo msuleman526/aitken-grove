@@ -1,0 +1,222 @@
+/* Specialised Treatment Section Styles */
+
+.specialised-treatment-section {
+    height: 951px;
+    background: #EFF9F9;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 45px;
+    box-sizing: border-box;
+}
+
+.specialised-treatment-container {
+    max-width: 1440px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 48px;
+}
+
+/* Section Title */
+.specialised-treatment-title {
+    font-family: 'Cal Sans', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 120%;
+    text-align: center;
+    margin: 0;
+    max-width: 800px;
+}
+
+.specialised-treatment-title .color-black {
+    color: #000000;
+}
+
+.specialised-treatment-title .color-primary {
+    color: #E62D5B;
+}
+
+/* Section Description */
+.specialised-treatment-description {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: #000000;
+    margin: 0;
+    max-width: 800px;
+}
+
+/* Treatment Cards Grid */
+/* Treatment Cards Grid */
+.treatment-cards-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 32px;
+    width: 100%;
+    max-width: 1350px; /* 4 cards × 308px + 3 gaps × 32px = 1364px, rounded down */
+    justify-items: center;
+}
+
+/* Center the last row with 2 cards using better approach */
+.treatment-card:nth-child(13) {
+    grid-column: 2;
+}
+
+.treatment-card:nth-child(14) {
+    grid-column: 3;
+}
+
+/* Individual Treatment Card */
+.treatment-card {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 24px;
+    gap: 16px;
+    width: 308px;
+    height: 160px;
+    background: #FFFFFF;
+    border-radius: 16px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    box-sizing: border-box;
+}
+
+.treatment-card:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.12);
+}
+
+/* Treatment Card Icon */
+.treatment-card-icon {
+    width: 29px;
+    height: 29px;
+    flex-shrink: 0;
+    object-fit: contain;
+}
+
+/* Treatment Card Content */
+.treatment-card-content {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex: 1;
+    width: 100%;
+}
+
+/* Treatment Card Title */
+.treatment-card-title {
+    font-family: 'Cal Sans', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 700; /* Bold weight */
+    font-size: 18px;
+    line-height: 150%;
+    color: #000000;
+    margin: 0;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Treatment Card Description */
+.treatment-card-description {
+    font-family: 'Inter', Arial, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+    color: #000000;
+    margin: 0;
+    flex: 1;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 4;
+    -webkit-box-orient: vertical;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+}
+
+/* Responsive Design */
+
+/* Tablet - 3 columns */
+@media (max-width: 1200px) {
+    .specialised-treatment-section {
+        height: auto;
+        min-height: 951px;
+        padding: 45px 24px;
+    }
+    
+    .treatment-cards-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 24px;
+        max-width: 1000px;
+    }
+    
+    .treatment-card {
+        width: 100%;
+        max-width: 308px;
+    }
+}
+
+/* Mobile - Less than 768px width */
+@media (max-width: 767px) {
+    .specialised-treatment-section {
+        padding: 32px 20px;
+        height: auto;
+        min-height: 600px;
+    }
+    
+    .specialised-treatment-container {
+        gap: 32px;
+        align-items: center;
+    }
+    
+    /* Mobile Title Style */
+    .specialised-treatment-title {
+        width: 392px;
+        height: 76px;
+        font-family: 'Cal Sans';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 32px;
+        line-height: 120%;
+        text-align: center;
+        max-width: 392px;
+    }
+    
+    /* Mobile Description Style */
+    .specialised-treatment-description {
+        width: 392px;
+        height: 48px;
+        font-family: 'Inter';
+        font-style: normal;
+        font-weight: 400;
+        font-size: 16px;
+        line-height: 150%;
+        color: #000000;
+        text-align: center;
+        max-width: 392px;
+    }
+    
+    /* Mobile Cards Grid - One card per row, center aligned */
+    .treatment-cards-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+        max-width: 100%;
+        justify-items: center;
+        align-items: center;
+    }
+    
+    .treatment-card {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        min-height: 160px;
+        margin: 0 auto;
+    }
+}

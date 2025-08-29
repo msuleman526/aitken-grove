@@ -1,0 +1,5 @@
+Landing Page CMS Progress Log
+===============================
+
+[2025-08-29 - Issue Identified] Missing public/index.php file preventing access to aitken-grove.test
+[2025-08-29 - Fix Applied] Created missing public/index.php file - next step: run composer install and setup commands
