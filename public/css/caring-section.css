@@ -3,7 +3,7 @@
     height: 555px;
     padding: 0 45px;
     max-width: 1440px;
-    margin: 0 auto;
+    margin: 0px auto;
     display: flex;
     align-items: center;
 }
@@ -73,7 +73,7 @@
     gap: 12px;
 }
 
-.point-icon {
+.caring-point-icon {
     width: 20px;
     height: 20px;
     flex-shrink: 0;

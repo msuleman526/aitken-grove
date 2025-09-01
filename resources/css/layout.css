@@ -1,0 +1,43 @@
+/* Layout and Section Spacing Styles */
+
+/* Main page section spacing - 20px gap between sections */
+main > section:not(:last-child) {
+    margin-bottom: 20px;
+}
+
+/* Ensure sections have consistent structure */
+main {
+    display: block;
+    position: relative;
+}
+
+/* Override any section margins that might conflict */
+main > section {
+    margin-top: 0;
+}
+
+/* Specific section spacing adjustments if needed */
+.specialists-section,
+.trust-section,
+.caring-section,
+.specialised-treatment-section,
+.features-section,
+.testimonials-section,
+.pricing-section,
+.faq-section,
+.cta-banner {
+    position: relative;
+}
+
+/* Responsive section spacing */
+@media (max-width: 768px) {
+    main > section:not(:last-child) {
+        margin-bottom: 15px;
+    }
+}
+
+@media (max-width: 480px) {
+    main > section:not(:last-child) {
+        margin-bottom: 10px;
+    }
+}

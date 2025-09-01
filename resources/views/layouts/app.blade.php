@@ -16,6 +16,7 @@
     <link href="https://fonts.cdnfonts.com/css/cal-sans" rel="stylesheet">
     
     <!-- Styles -->
+    <link rel="stylesheet" href="{{ asset('css/layout.css') }}">
     <link rel="stylesheet" href="{{ asset('css/hero.css') }}">
     <link rel="stylesheet" href="{{ asset('css/consultant-bar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/caring-section.css') }}">

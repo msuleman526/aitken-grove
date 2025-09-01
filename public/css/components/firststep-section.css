@@ -1,0 +1,232 @@
+/* FirstStep Section Styles */
+.firststep-section {
+    height: 406px;
+    background: #FFFFFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+}
+
+.firststep-container {
+    width: 100%;
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 45px;
+}
+
+.firststep-background {
+    width: 1320px;
+    height: 346px;
+    background-image: url('/images/step-background.png');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    border-radius: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    padding-left: 80px;
+    margin: 0 auto;
+    position: relative;
+}
+
+.firststep-content {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    max-width: 539px;
+}
+
+.firststep-title {
+    width: 539px;
+    height: 96px;
+    font-family: 'Cal Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 120%;
+    color: #FFFFFF;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.firststep-description {
+    width: 539px;
+    height: 54px;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #FFFFFF;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.firststep-btn {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 28px;
+    gap: 10px;
+    width: 196px;
+    height: 56px;
+    background: #FFFFFF;
+    border-radius: 100px;
+    color: var(--primary, #E62D5B);
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    transition: all 0.3s ease;
+    box-sizing: border-box;
+}
+
+.firststep-btn:hover {
+    background: var(--primary, #E62D5B);
+    color: #FFFFFF;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(230, 45, 91, 0.3);
+}
+
+.firststep-btn:active {
+    transform: translateY(0);
+}
+
+/* Responsive Design */
+@media (max-width: 1400px) {
+    .firststep-container {
+        padding: 0 30px;
+    }
+
+    .firststep-background {
+        width: 100%;
+        max-width: 1200px;
+        padding-left: 60px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .firststep-background {
+        width: 100%;
+        max-width: 1000px;
+        height: 320px;
+        padding-left: 50px;
+    }
+
+    .firststep-title {
+        width: 100%;
+        max-width: 480px;
+        height: auto;
+        font-size: 36px;
+    }
+
+    .firststep-description {
+        width: 100%;
+        max-width: 480px;
+        height: auto;
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .firststep-section {
+        height: auto;
+        padding: 40px 0;
+    }
+
+    .firststep-container {
+        padding: 0 20px;
+    }
+
+    .firststep-background {
+        width: 100%;
+        height: 280px;
+        padding: 40px 30px;
+        justify-content: center;
+        text-align: center;
+    }
+
+    .firststep-content {
+        align-items: center;
+        text-align: center;
+        max-width: 100%;
+    }
+
+    .firststep-title {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        font-size: 28px;
+        line-height: 130%;
+    }
+
+    .firststep-description {
+        width: 100%;
+        max-width: 350px;
+        height: auto;
+        font-size: 15px;
+        line-height: 140%;
+    }
+
+    .firststep-btn {
+        width: 180px;
+        height: 50px;
+        padding: 14px 24px;
+        font-size: 13px;
+    }
+}
+
+@media (max-width: 480px) {
+    .firststep-container {
+        padding: 0 15px;
+    }
+
+    .firststep-background {
+        height: 250px;
+        padding: 30px 20px;
+        border-radius: 8px;
+    }
+
+    .firststep-content {
+        gap: 20px;
+    }
+
+    .firststep-title {
+        max-width: 280px;
+        font-size: 24px;
+        line-height: 125%;
+    }
+
+    .firststep-description {
+        max-width: 280px;
+        font-size: 14px;
+    }
+
+    .firststep-btn {
+        width: 160px;
+        height: 46px;
+        padding: 12px 20px;
+        font-size: 12px;
+    }
+}
+
+/* Ensure proper font loading */
+@font-face {
+    font-family: 'Cal Sans';
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    font-weight: 400 500;
+    font-style: normal;
+    font-display: swap;
+}

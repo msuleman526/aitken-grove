@@ -1,61 +1,147 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# 🏥 Aitken Grove Medical Center - Landing Page CMS
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+A Laravel-based Content Management System for the Aitken Grove Medical Center website, built with Filament v3 for easy content editing.
 
-## About Laravel
+## ✨ Features
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+- **🎨 Modern Landing Page**: Responsive design with modular sections
+- **📝 Content Management**: Easy-to-use Filament admin panel
+- **🔧 Modular Sections**: Pre-built sections including Trust, Features, Testimonials, etc.
+- **📱 Mobile Responsive**: Optimized for all device sizes
+- **⚡ Fast & Optimized**: Built with Laravel 10/11 and modern web standards
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## 🚀 Quick Setup
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+### 1. Install Dependencies
+```bash
+composer install
+npm install
+```
 
-## Learning Laravel
+### 2. Environment Setup
+```bash
+cp .env.example .env
+php artisan key:generate
+```
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+### 3. Database Setup
+```bash
+# Configure your database in .env file
+php artisan migrate
+php artisan db:seed
+```
 
-You may also try the [Laravel Bootcamp](https://bootcamp.laravel.com), where you will be guided through building a modern Laravel application from scratch.
+### 4. Build Assets
+```bash
+npm run build
+# or for development
+npm run dev
+```
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+### 5. Create Filament Admin User
+```bash
+php artisan make:filament-user
+```
 
-## Laravel Sponsors
+## 📖 Content Management
 
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the [Laravel Partners program](https://partners.laravel.com).
+### Default Content
+The system comes with pre-seeded content including:
+- **Trust Section**: "Care You Can Trust" with 5 trust points
+- **Default Home Page**: Ready-to-use landing page structure
 
-### Premium Partners
+### Accessing Admin Panel
+1. Visit `/admin` on your site
+2. Log in with your Filament admin credentials
+3. Navigate to **Sections** to edit content
 
-- **[Vehikl](https://vehikl.com)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel)**
-- **[DevSquad](https://devsquad.com/hire-laravel-developers)**
-- **[Redberry](https://redberry.international/laravel-development)**
-- **[Active Logic](https://activelogic.com)**
+### Available Sections
+- 🏥 **Trust Section** - Build patient confidence
+- ⭐ **Features Section** - Highlight key services
+- 💬 **Testimonials** - Patient reviews
+- 💰 **Pricing** - Service pricing tables
+- ❓ **FAQ** - Common questions
+- 📞 **CTA Banner** - Call-to-action sections
 
-## Contributing
+## 🛠️ Development
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+### Project Structure
+```
+📁 resources/views/
+├── 📁 components/          # Reusable section components
+│   ├── trust-section.blade.php
+│   ├── caring-section.blade.php
+│   └── ...
+├── 📁 landing/            # Landing page views
+│   └── index.blade.php
+└── 📁 layouts/            # Base layouts
 
-## Code of Conduct
+📁 public/
+├── 📁 css/               # Section-specific stylesheets
+├── 📁 images/            # Images and media
+└── 📁 icons/             # Icon assets
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+📁 app/Filament/Resources/ # Admin panel configuration
+```
 
-## Security Vulnerabilities
+### Adding New Sections
+1. Add section key to `SectionResource.php`
+2. Create Blade component in `resources/views/components/`
+3. Add CSS file in `public/css/`
+4. Update landing page to include new section
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+### Design System
+- **Primary Color**: `#E62D5B`
+- **Secondary Color**: `#FFFFFF`
+- **Accent Color**: `#000000`
+- **Max Width**: `1440px`
+- **Fonts**: 
+  - Primary: Cal Sans (headings)
+  - Secondary: Inter (body text)
 
-## License
+## 📝 Commands
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+### Regenerate Landing Page Content
+```bash
+php artisan landing:seed
+```
+
+### Clear Cache
+```bash
+php artisan cache:clear
+php artisan config:clear
+php artisan view:clear
+```
+
+## 🎯 Trust Section Details
+
+The Trust section (`Care You Can Trust`) includes:
+- **Height**: 689px
+- **Background**: `#F5F5F5`
+- **Layout**: Two-column (content left, image right)
+- **Icons**: 60x60px trust icons (trust1.png to trust5.png)
+- **Typography**: Cal Sans for titles, Inter for descriptions
+
+### Default Trust Points
+1. 100+ Specialist Doctors
+2. 20+ Years of Excellence  
+3. Same-Day Appointments
+4. Modern Facilities & Equipment
+5. Comprehensive Healthcare
+
+## 📱 Responsive Breakpoints
+- **Desktop**: 1200px+
+- **Tablet**: 768px - 1199px
+- **Mobile**: < 768px
+
+## 🔒 Security
+- Built on Laravel's secure foundation
+- Filament admin panel with role-based access
+- Input validation and sanitization
+
+## 📄 License
+This project is proprietary software for Aitken Grove Medical Center.
+
+---
+
+**Need help?** Check the knowledge base document or contact the development team.

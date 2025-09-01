@@ -17,30 +17,30 @@
                 @if(isset($section->content_json['points']) && is_array($section->content_json['points']))
                     @foreach($section->content_json['points'] as $point)
                         <div class="caring-point">
-                            <img src="{{ asset('icons/check-circle.png') }}" alt="Check" class="point-icon">
+                            <img src="{{ asset('icons/check-circle.png') }}" alt="Check" class="caring-point-icon">
                             <span class="point-text">{{ $point['text'] }}</span>
                         </div>
                     @endforeach
                 @else
                     <!-- Default points if none are set -->
                     <div class="caring-point">
-                        <img src="{{ asset('icons/check-circle.png') }}" alt="Check" class="point-icon">
+                        <img src="{{ asset('icons/check-circle.png') }}" alt="Check" class="caring-point-icon">
                         <span class="point-text">Care for children, adults & seniors</span>
                     </div>
                     <div class="caring-point">
-                        <img src="{{ asset('icons/check-circle.png') }}" alt="Check" class="point-icon">
+                        <img src="{{ asset('icons/check-circle.png') }}" alt="Check" class="caring-point-icon">
                         <span class="point-text">Experienced doctors across specialities</span>
                     </div>
                     <div class="caring-point">
-                        <img src="{{ asset('icons/check-circle.png') }}" alt="Check" class="point-icon">
+                        <img src="{{ asset('icons/check-circle.png') }}" alt="Check" class="caring-point-icon">
                         <span class="point-text">Advanced facilities & modern treatments</span>
                     </div>
                     <div class="caring-point">
-                        <img src="{{ asset('icons/check-circle.png') }}" alt="Check" class="point-icon">
+                        <img src="{{ asset('icons/check-circle.png') }}" alt="Check" class="caring-point-icon">
                         <span class="point-text">Preventive & personalized care plans</span>
                     </div>
                     <div class="caring-point">
-                        <img src="{{ asset('icons/check-circle.png') }}" alt="Check" class="point-icon">
+                        <img src="{{ asset('icons/check-circle.png') }}" alt="Check" class="caring-point-icon">
                         <span class="point-text">Patient-centered approach with personalized care plans</span>
                     </div>
                 @endif

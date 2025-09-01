@@ -24,6 +24,12 @@
                 @include('components.caring-section', ['section' => $section])
             @elseif($section->key === 'specialised_treatment')
                 @include('components.specialised-treatment-section', ['section' => $section])
+            @elseif($section->key === 'trust')
+                @include('components.trust-section', ['section' => $section])
+            @elseif($section->key === 'specialists')
+                @include('components.specialists-section', ['section' => $section])
+            @elseif($section->key === 'firststep')
+                @include('components.firststep-section', ['section' => $section])
             @elseif($section->key === 'features')
                 @include('components.features-section', ['section' => $section])
             @elseif($section->key === 'testimonials')
@@ -40,9 +46,7 @@
 @endsection
 
 @push('styles')
-<style>
-    /* Additional page-specific styles can go here */
-</style>
+<!-- Additional page-specific styles can be added here -->
 @endpush
 
 @push('scripts')

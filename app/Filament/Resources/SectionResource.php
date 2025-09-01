@@ -51,6 +51,9 @@ class SectionResource extends Resource
                         ->options([
                             'caring' => 'Caring Section',
                             'specialised_treatment' => 'Specialised Treatment',
+                            'trust' => 'Trust Section',
+                            'specialists' => 'Specialists Section',
+                            'firststep' => 'First Step Section',
                             'features' => 'Features Section',
                             'testimonials' => 'Testimonials Section',
                             'pricing' => 'Pricing Section',
@@ -178,6 +181,122 @@ class SectionResource extends Resource
                 ])
                 ->visible(fn ($get) => $get('key') === 'specialised_treatment'),
 
+            FormSection::make('Trust Section Content')
+                ->schema([
+                    TextInput::make('content_json.title')
+                        ->label('Title')
+                        ->maxLength(255)
+                        ->placeholder('Care You Can Trust')
+                        ->helperText('Main title - "Care You" (black), "Can Trust" (primary color)'),
+                    Textarea::make('content_json.description')
+                        ->label('Description')
+                        ->rows(3)
+                        ->placeholder('At Aitken Grove Medical Center, we believe healthcare should be more than just treatment — it should be compassion, trust, and excellence combined. That\'s why thousands of patients choose us every year.')
+                        ->helperText('Description with Inter font, 18px, black color. This section is created by default during installation.'),
+                    Repeater::make('content_json.points')
+                        ->label('Trust Points')
+                        ->schema([
+                            TextInput::make('title')
+                                ->label('Point Title')
+                                ->required()
+                                ->placeholder('100+ Specialist Doctors')
+                                ->maxLength(255)
+                                ->helperText('Point title with Cal Sans font, 18px'),
+                            Textarea::make('description')
+                                ->label('Point Description')
+                                ->required()
+                                ->rows(2)
+                                ->placeholder('Expert doctors across multiple specialties for complete care.')
+                                ->maxLength(500)
+                                ->helperText('Point description with Inter font, 16px'),
+                            TextInput::make('icon')
+                                ->label('Icon Filename')
+                                ->required()
+                                ->placeholder('trust1.png')
+                                ->helperText('Icon filename from public/icons/trust/ (trust1.png to trust5.png, 60x60px)')
+                                ->maxLength(50),
+                        ])
+                        ->defaultItems(5)
+                        ->maxItems(10)
+                        ->minItems(1)
+                        ->helperText('Trust points with icons, titles, and descriptions')
+                        ->addActionLabel('Add Trust Point'),
+                ])
+                ->visible(fn ($get) => $get('key') === 'trust'),
+
+            FormSection::make('Specialists Section Content')
+                ->schema([
+                    TextInput::make('content_json.title')
+                        ->label('Section Title')
+                        ->maxLength(255)
+                        ->placeholder('Meet Our Specialists')
+                        ->helperText('Title with "Meet Our" (black) and "Specialists" (primary #E62D5B)'),
+                    Textarea::make('content_json.description')
+                        ->label('Section Description')
+                        ->rows(2)
+                        ->placeholder('Trusted, experienced doctors dedicated to your care.')
+                        ->helperText('Description with Inter font, 18px, center aligned'),
+                    Repeater::make('content_json.specialists')
+                        ->label('Specialists')
+                        ->schema([
+                            TextInput::make('name')
+                                ->label('Doctor Name')
+                                ->required()
+                                ->placeholder('Dr. Salman Raza')
+                                ->maxLength(255)
+                                ->helperText('Doctor name with Cal Sans font, 18px medium'),
+                            TextInput::make('role')
+                                ->label('Specialization/Role')
+                                ->required()
+                                ->placeholder('Senior Orthopedic Surgeon')
+                                ->maxLength(255)
+                                ->helperText('Role/specialization with Inter font, 14px'),
+                            FileUpload::make('image')
+                                ->label('Doctor Image')
+                                ->disk('public')
+                                ->directory('specialists')
+                                ->image()
+                                ->imageResizeMode('cover')
+                                ->imageCropAspectRatio('300:350')
+                                ->maxSize(2048)
+                                ->helperText('Recommended size: 300x350px. Max file size: 2MB')
+                                ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp']),
+                        ])
+                        ->defaultItems(5)
+                        ->maxItems(20)
+                        ->minItems(1)
+                        ->orderColumn('sort')
+                        ->helperText('Specialist cards with images, names, and roles. Cards scroll horizontally.')
+                        ->addActionLabel('Add Specialist'),
+                ])
+                ->visible(fn ($get) => $get('key') === 'specialists'),
+
+            FormSection::make('First Step Section Content')
+                ->schema([
+                    TextInput::make('content_json.title')
+                        ->label('Section Title')
+                        ->maxLength(255)
+                        ->placeholder('Take the First Step Toward Better Health')
+                        ->helperText('Main title with Cal Sans font, 40px, white color'),
+                    Textarea::make('content_json.description')
+                        ->label('Section Description')
+                        ->rows(3)
+                        ->placeholder('Book your appointment with our trusted doctors today and get the right care without long waits.')
+                        ->helperText('Description with Inter font, 18px, white color'),
+                    TextInput::make('content_json.cta_label')
+                        ->label('Button Text')
+                        ->required()
+                        ->placeholder('Book a Consultant')
+                        ->helperText('Button text, 14px font size'),
+                    TextInput::make('content_json.cta_url')
+                        ->label('Button URL')
+                        ->required()
+                        ->url()
+                        ->placeholder('#')
+                        ->helperText('URL for the button action'),
+                ])
+                ->visible(fn ($get) => $get('key') === 'firststep'),
+
             FormSection::make('Features Section Content')
                 ->schema([
                     Select::make('content_json.layout')
@@ -288,6 +407,9 @@ class SectionResource extends Resource
                     ->colors([
                         'primary' => 'caring',
                         'purple' => 'specialised_treatment',
+                        'indigo' => 'trust',
+                        'orange' => 'specialists',
+                        'pink' => 'firststep',
                         'success' => 'features',
                         'warning' => 'testimonials',
                         'danger' => 'pricing',
@@ -314,6 +436,9 @@ class SectionResource extends Resource
                     ->options([
                         'caring' => 'Caring Section',
                         'specialised_treatment' => 'Specialised Treatment',
+                        'trust' => 'Trust Section',
+                        'specialists' => 'Specialists Section',
+                        'firststep' => 'First Step Section',
                         'features' => 'Features Section',
                         'testimonials' => 'Testimonials Section',
                         'pricing' => 'Pricing Section',

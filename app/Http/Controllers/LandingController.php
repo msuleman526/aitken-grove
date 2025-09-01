@@ -180,6 +180,81 @@ class LandingController extends Controller
                 ->get();
         }
         
+        // Create default specialists section if it doesn't exist
+        $specialistsSection = $sections->where('key', 'specialists')->first();
+        if (!$specialistsSection) {
+            $specialistsSection = Section::create([
+                'page_id' => $page->id,
+                'key' => 'specialists',
+                'heading' => 'Meet Our Specialists',
+                'subheading' => 'Trusted, experienced doctors dedicated to your care',
+                'content_json' => [
+                    'title' => 'Meet Our Specialists',
+                    'description' => 'Trusted, experienced doctors dedicated to your care.',
+                    'specialists' => [
+                        [
+                            'name' => 'Dr. Salman Raza',
+                            'role' => 'Senior Orthopedic Surgeon',
+                            'image' => null
+                        ],
+                        [
+                            'name' => 'Dr. Ayesha Khan',
+                            'role' => 'Consultant Cardiologist',
+                            'image' => null
+                        ],
+                        [
+                            'name' => 'Dr. Maria Ahmed',
+                            'role' => 'Pediatrician & Child Specialist',
+                            'image' => null
+                        ],
+                        [
+                            'name' => 'Dr. Hassan Malik',
+                            'role' => 'Neurologist',
+                            'image' => null
+                        ],
+                        [
+                            'name' => 'Dr. Sarah Johnson',
+                            'role' => 'Gynecologist',
+                            'image' => null
+                        ]
+                    ]
+                ],
+                'position' => 4,
+                'is_visible' => true
+            ]);
+            
+            // Refresh sections collection
+            $sections = Section::where('page_id', $page->id)
+                ->where('is_visible', true)
+                ->orderBy('position')
+                ->get();
+        }
+        
+        // Create default firststep section if it doesn't exist
+        $firststepSection = $sections->where('key', 'firststep')->first();
+        if (!$firststepSection) {
+            $firststepSection = Section::create([
+                'page_id' => $page->id,
+                'key' => 'firststep',
+                'heading' => 'Take the First Step Toward Better Health',
+                'subheading' => 'Book your appointment with our trusted doctors today',
+                'content_json' => [
+                    'title' => 'Take the First Step Toward Better Health',
+                    'description' => 'Book your appointment with our trusted doctors today and get the right care without long waits.',
+                    'cta_label' => 'Book a Consultant',
+                    'cta_url' => '#'
+                ],
+                'position' => 5,
+                'is_visible' => true
+            ]);
+            
+            // Refresh sections collection
+            $sections = Section::where('page_id', $page->id)
+                ->where('is_visible', true)
+                ->orderBy('position')
+                ->get();
+        }
+        
         return view('landing.index', compact('page', 'sections'));
     }
 }
