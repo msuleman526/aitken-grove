@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder
         $this->call([
             HomeSeeder::class,
             LandingPageSeeder::class,
+            ServiceSeeder::class,
         ]);
     }
 }

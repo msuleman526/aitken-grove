@@ -6,6 +6,22 @@
     <title>@yield('title', 'Aitken Grove Medical & Aesthetic Center')</title>
     
     <!-- Meta -->
+    <meta name="description" content="@yield('meta_description', 'Professional medical and aesthetic services at Aitken Grove. Comprehensive healthcare for all ages.')">
+    <link rel="canonical" href="@yield('canonical_url', url()->current())">
+    <meta name="robots" content="@yield('meta_robots', 'index, follow')">
+    
+    <!-- Open Graph -->
+    <meta property="og:title" content="@yield('title', 'Aitken Grove Medical & Aesthetic Center')">
+    <meta property="og:description" content="@yield('meta_description', 'Professional medical and aesthetic services at Aitken Grove. Comprehensive healthcare for all ages.')">
+    <meta property="og:url" content="@yield('canonical_url', url()->current())">
+    <meta property="og:type" content="website">
+    <meta property="og:site_name" content="Aitken Grove">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="@yield('title', 'Aitken Grove Medical & Aesthetic Center')">
+    <meta name="twitter:description" content="@yield('meta_description', 'Professional medical and aesthetic services at Aitken Grove. Comprehensive healthcare for all ages.')">
+    
     @yield('meta')
     
     <!-- Fonts -->
@@ -21,6 +37,11 @@
     <link rel="stylesheet" href="{{ asset('css/consultant-bar.css') }}">
     <link rel="stylesheet" href="{{ asset('css/caring-section.css') }}">
     <link rel="stylesheet" href="{{ asset('css/specialised-treatment-section.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/trust-section.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/components/specialists-section.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/components/firststep-section.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/testimonials-section.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/footer.css') }}">
     <style>
         :root {
             --primary-color: #E62D5B;
@@ -48,18 +69,16 @@
             padding: 0 20px;
         }
         
-        .header-container {
-            max-width: 1320px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        
         /* Header Styles */
-        .header-wrapper {
-            background: var(--header-bg);
-            width: 100%;
-            max-height: 136px;
-            padding: 30px 0;
+        .header-container {
+            position: fixed;
+            top: 30px;
+            left: 50%;
+            transform: translateX(-50%);
+            max-width: 1320px;
+            width: calc(100% - 40px);
+            padding: 0 20px;
+            z-index: 1000;
         }
         
         .header {
@@ -70,7 +89,6 @@
             align-items: center;
             justify-content: space-between;
             padding: 0 40px;
-            backdrop-filter: blur(10px);
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
             border: 1px solid rgba(255, 255, 255, 0.4);
@@ -188,7 +206,8 @@
         /* Mobile Responsive */
         @media (max-width: 1200px) {
             .header-container {
-                max-width: 100%;
+                max-width: calc(100% - 32px);
+                width: calc(100% - 32px);
                 padding: 0 16px;
             }
             
@@ -203,6 +222,11 @@
         }
         
         @media (max-width: 768px) {
+            .header-container {
+                top: 16px;
+                width: calc(100% - 20px);
+            }
+            
             .header {
                 padding: 0 16px;
                 height: 80px;

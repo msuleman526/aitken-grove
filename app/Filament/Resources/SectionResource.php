@@ -327,29 +327,41 @@ class SectionResource extends Resource
 
             FormSection::make('Testimonials Section Content')
                 ->schema([
-                    Select::make('content_json.style')
-                        ->label('Display Style')
-                        ->options([
-                            'grid' => 'Grid Layout',
-                            'slider' => 'Slider/Carousel',
-                        ])
-                        ->default('grid'),
+                    TextInput::make('content_json.title')
+                        ->label('Main Title')
+                        ->maxLength(255)
+                        ->placeholder('Trusted by Thousands')
+                        ->helperText('First part of title - will be displayed in black color'),
+                    TextInput::make('content_json.subtitle')
+                        ->label('Subtitle')
+                        ->maxLength(255)
+                        ->placeholder('Loved by Patients')
+                        ->helperText('Second part of title - will be displayed in primary color (#E62D5B)'),
                     Repeater::make('content_json.items')
-                        ->label('Testimonial Items')
+                        ->label('Testimonial Comments')
                         ->schema([
                             Textarea::make('quote')
-                                ->label('Quote')
+                                ->label('Comment')
                                 ->required()
-                                ->rows(3),
+                                ->rows(4)
+                                ->placeholder('The doctors here are amazing! They took great care of me and explained everything clearly...')
+                                ->helperText('Patient testimonial comment - Inter font, 16px, black color'),
                             TextInput::make('author')
-                                ->label('Author Name')
-                                ->required(),
+                                ->label('Patient Name')
+                                ->required()
+                                ->placeholder('Sarah Johnson')
+                                ->helperText('Patient name - Inter font, 16px, 600 weight'),
                             TextInput::make('role')
-                                ->label('Author Role')
-                                ->placeholder('Patient'),
+                                ->label('Person Description')
+                                ->placeholder('Patient')
+                                ->helperText('Optional role/description - Inter font, 14px, gray color'),
                         ])
                         ->defaultItems(3)
-                        ->addActionLabel('Add Testimonial'),
+                        ->maxItems(20)
+                        ->minItems(1)
+                        ->orderColumn('sort')
+                        ->helperText('Patient testimonials in cards (500x280px) with horizontal scroll navigation')
+                        ->addActionLabel('Add Testimonial Comment'),
                 ])
                 ->visible(fn ($get) => $get('key') === 'testimonials'),
 

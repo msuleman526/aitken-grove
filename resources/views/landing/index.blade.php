@@ -43,6 +43,9 @@
             @endif
         @endforeach
     </main>
+    
+    <!-- Footer -->
+    @include('components.footer')
 @endsection
 
 @push('styles')

@@ -5,6 +5,15 @@
 @source '../**/*.blade.php';
 @source '../**/*.js';
 
+/* ① Register Cal Sans (served locally from /public) */
+@font-face {
+    font-family: 'Cal Sans';
+    src: url('/fonts/CalSans-Regular.ttf') format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
 @theme {
     --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';

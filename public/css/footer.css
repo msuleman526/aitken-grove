@@ -1,0 +1,492 @@
+/* Footer Component Styles */
+
+.footer-wrapper {
+    width: 100%;
+    height: 890px;
+    background: #FFFFFF;
+    display: flex;
+    flex-direction: column;
+    font-family: 'Inter', sans-serif;
+}
+
+/* Consultant CTA Section */
+.consultant-cta-section {
+    flex: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 60px 20px;
+}
+
+.consultant-container {
+    text-align: center;
+    max-width: 900px;
+    width: 100%;
+}
+
+.consultant-image {
+    margin-bottom: 32px;
+}
+
+.consultant-image img {
+    width: 141px;
+    height: 90px;
+    object-fit: contain;
+}
+
+.consultant-title {
+    width: 100%;
+    max-width: 900px;
+    height: 48px;
+    font-family: 'Cal Sans', 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 120%;
+    text-align: center;
+    color: #000000;
+    margin: 0 0 24px 0;
+    display: block;
+}
+
+.consultant-title-primary {
+    color: #E62D5B;
+}
+
+.consultant-description {
+    width: 100%;
+    max-width: 900px;
+    min-height: 54px;
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    text-align: center;
+    color: #000000;
+    margin: 0 auto 40px auto;
+}
+
+.consultant-button {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 16px 16px;
+    gap: 10px;
+    width: 196px;
+    height: 56px;
+    background: #E62D5B;
+    color: #FFFFFF;
+    border-radius: 100px;
+    text-decoration: none;
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+    border: 2px solid #E62D5B;
+}
+
+.consultant-button:hover {
+    background: #FFFFFF;
+    color: #E62D5B;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(230, 45, 91, 0.25);
+}
+
+/* Separator */
+.footer-separator {
+    width: 100%;
+    height: 1px;
+    background-color: rgba(0, 0, 0, 0.1);
+    /* More visible than #0000001A */
+    margin: 0;
+    border: none;
+    flex-shrink: 0;
+    opacity: 1;
+    display: block;
+}
+
+/* Main Footer Content */
+.footer-content {
+    flex: 1;
+    padding: 60px 0;
+}
+
+.footer-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 45px;
+}
+
+.footer-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    gap: 80px;
+}
+
+/* Left Column - 50% width */
+.footer-left {
+    flex: 0 0 50%;
+    width: 50%;
+    max-width: 50%;
+}
+
+/* Right Column - 50% width */
+.footer-right {
+    flex: 0 0 50%;
+    width: 50%;
+    max-width: 50%;
+    display: flex;
+    gap: 60px;
+    justify-content: flex-start;
+}
+
+/* Footer Left Content Styles */
+.footer-logo {
+    margin-bottom: 24px;
+}
+
+.footer-logo img {
+    width: 301px;
+    height: 50px;
+    object-fit: contain;
+}
+
+.footer-description {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000000;
+    margin-bottom: 32px;
+    max-width: 648px;
+}
+
+.footer-contact {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+
+.contact-item {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.contact-item img {
+    width: 36px;
+    height: 36px;
+    object-fit: contain;
+    flex-shrink: 0;
+}
+
+.contact-item span {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000000;
+}
+
+.footer-menu {
+    min-width: 200px;
+}
+
+.footer-menu-title {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 600;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000000;
+    margin-bottom: 20px;
+}
+
+.footer-menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+.footer-menu-list li {
+    margin: 0;
+}
+
+.footer-menu-list a {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-menu-list a:hover {
+    color: #E62D5B;
+}
+
+/* Services Two-Column Layout */
+.services-menu.footer-menu {
+    min-width: 400px;
+}
+
+.services-columns {
+    display: flex;
+    gap: 40px;
+}
+
+.services-column-1,
+.services-column-2 {
+    flex: 1;
+    min-width: 180px;
+}
+
+.services-column-1 .footer-menu-list,
+.services-column-2 .footer-menu-list {
+    margin: 0;
+    padding: 0;
+}
+
+/* Ensure single column services still work */
+.services-menu .footer-menu-list:not(.services-column-1):not(.services-column-2) {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+
+/* Footer Bottom */
+.footer-bottom {
+    padding: 24px 0;
+}
+
+.footer-bottom-content {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 20px;
+}
+
+.footer-copyright {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000000;
+}
+
+.footer-legal {
+    display: flex;
+    gap: 24px;
+    align-items: center;
+}
+
+.footer-legal a {
+    font-family: 'Inter', sans-serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000000;
+    text-decoration: none;
+    transition: color 0.3s ease;
+}
+
+.footer-legal a:hover {
+    color: #E62D5B;
+}
+
+.footer-social {
+    display: flex;
+    gap: 16px;
+    align-items: center;
+}
+
+.social-link {
+    display: block;
+    transition: transform 0.3s ease;
+}
+
+.social-link:hover {
+    transform: scale(1.1);
+}
+
+.social-link img {
+    object-fit: contain;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .footer-container {
+        padding: 0 30px;
+    }
+
+    .footer-row {
+        gap: 40px;
+    }
+
+    .footer-right {
+        gap: 40px;
+    }
+
+    .consultant-title {
+        font-size: 36px;
+    }
+
+    .consultant-description {
+        font-size: 16px;
+    }
+
+    /* Services columns adjust on tablet */
+    .services-columns {
+        gap: 30px;
+    }
+
+    .services-menu.footer-menu {
+        min-width: 350px;
+    }
+}
+
+@media (max-width: 768px) {
+    .footer-wrapper {
+        height: auto;
+        min-height: 890px;
+    }
+
+    .footer-container {
+        padding: 0 20px;
+    }
+
+    .footer-row {
+        flex-direction: column;
+        gap: 40px;
+    }
+
+    /* Stack columns on mobile - each takes full width */
+    .footer-left,
+    .footer-right {
+        flex: 1;
+        width: 100%;
+        max-width: 100%;
+    }
+
+    .footer-right {
+        flex-direction: column;
+        gap: 30px;
+        width: 100%;
+        justify-content: flex-start;
+    }
+
+    .footer-bottom-content {
+        flex-direction: column;
+        gap: 16px;
+        text-align: center;
+    }
+
+    .footer-legal {
+        flex-direction: column;
+        gap: 12px;
+    }
+
+    /* Services columns stack on mobile */
+    .services-columns {
+        flex-direction: column;
+        gap: 20px;
+    }
+
+    .services-menu.footer-menu {
+        min-width: auto;
+    }
+
+    .consultant-title {
+        font-size: 32px;
+        height: auto;
+        line-height: 120%;
+    }
+
+    .consultant-description {
+        font-size: 16px;
+        height: auto;
+    }
+
+    .consultant-button {
+        width: 180px;
+        height: 52px;
+        padding: 14px 24px;
+        font-size: 15px;
+    }
+
+    .footer-logo img {
+        width: 250px;
+        height: auto;
+    }
+
+    .consultant-cta-section {
+        padding: 40px 20px;
+    }
+
+    .footer-content {
+        padding: 40px 0;
+    }
+}
+
+@media (max-width: 480px) {
+    .footer-container {
+        padding: 0 15px;
+    }
+
+    .consultant-title {
+        font-size: 28px;
+        flex-direction: column;
+        height: auto;
+        gap: 4px;
+    }
+
+    .consultant-description {
+        font-size: 15px;
+        padding: 0 10px;
+    }
+
+    .consultant-button {
+        width: 170px;
+        height: 48px;
+        padding: 12px 20px;
+        font-size: 14px;
+    }
+
+    .footer-logo img {
+        width: 200px;
+    }
+
+    .footer-description {
+        font-size: 15px;
+    }
+
+    .contact-item span {
+        font-size: 15px;
+    }
+
+    .footer-menu-title {
+        font-size: 17px;
+    }
+
+    .footer-menu-list a {
+        font-size: 15px;
+    }
+
+    .footer-copyright,
+    .footer-legal a {
+        font-size: 14px;
+    }
+}

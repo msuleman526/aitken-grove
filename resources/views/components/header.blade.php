@@ -1,5 +1,4 @@
-<div class="header-wrapper">
-    <div class="header-container">
+<div class="header-container">
         <header class="header">
             <!-- Logo -->
             <div class="logo-wrapper">
@@ -13,12 +12,14 @@
                         <a href="/" class="nav-link">Home</a>
                     </li>
                     <li class="nav-item nav-dropdown">
-                        <a href="#" class="nav-link nav-dropdown">Services</a>
+                        <a href="{{ route('services.index') }}" class="nav-link nav-dropdown">Services</a>
                         <div class="dropdown-menu">
-                            <a href="/medical-services" class="dropdown-item">Medical Services</a>
-                            <a href="/aesthetic-treatments" class="dropdown-item">Aesthetic Treatments</a>
-                            <a href="/wellness-programs" class="dropdown-item">Wellness Programs</a>
-                            <a href="/consultations" class="dropdown-item">Consultations</a>
+                            <a href="{{ route('services.show', 'family-health-care') }}" class="dropdown-item">Family Health Care</a>
+                            <a href="{{ route('services.show', 'pediatric-care') }}" class="dropdown-item">Pediatric Care</a>
+                            <a href="{{ route('services.show', 'geriatric-medicine') }}" class="dropdown-item">Geriatric Medicine</a>
+                            <a href="{{ route('services.show', 'womens-health') }}" class="dropdown-item">Women's Health</a>
+                            <a href="{{ route('services.show', 'mens-health') }}" class="dropdown-item">Men's Health</a>
+                            <a href="{{ route('services.index') }}" class="dropdown-item"><strong>View All Services</strong></a>
                         </div>
                     </li>
                     <li class="nav-item">
@@ -40,5 +41,4 @@
                 ☰
             </button>
         </header>
-    </div>
 </div>

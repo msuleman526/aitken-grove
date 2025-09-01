@@ -1,0 +1,231 @@
+/* Services Index Page */
+.services-index {
+    min-height: calc(100vh - 150px);
+    background: #FFFFFF;
+}
+
+.services-header {
+    background: #F5F5F5;
+    padding: 120px 0 80px;
+}
+
+.services-header-content {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 45px;
+    text-align: center;
+}
+
+.services-title {
+    font-family: 'Cal Sans', sans-serif;
+    font-weight: 600;
+    font-size: 48px;
+    line-height: 58px;
+    color: #000000;
+    margin: 0 0 24px;
+}
+
+.services-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #666666;
+    max-width: 600px;
+    margin: 0 auto;
+}
+
+.services-grid {
+    padding: 80px 0;
+}
+
+.services-container {
+    max-width: 1440px;
+    margin: 0 auto;
+    padding: 0 45px;
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+    gap: 40px;
+}
+
+.service-card {
+    background: #FFFFFF;
+    border-radius: 12px;
+    overflow: hidden;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.service-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.12);
+}
+
+.service-card-image {
+    width: 100%;
+    height: 200px;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: relative;
+}
+
+.service-card-image::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: linear-gradient(135deg, rgba(230, 45, 91, 0.1), rgba(0, 0, 0, 0.2));
+}
+
+.service-card-content {
+    padding: 32px 28px;
+}
+
+.service-card-title {
+    font-family: 'Cal Sans', sans-serif;
+    font-weight: 600;
+    font-size: 24px;
+    line-height: 32px;
+    color: #000000;
+    margin: 0 0 16px;
+}
+
+.service-card-description {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #666666;
+    margin: 0 0 24px;
+}
+
+.service-card-button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    background: #E62D5B;
+    color: #FFFFFF;
+    font-family: 'Inter', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-decoration: none;
+    padding: 12px 24px;
+    border-radius: 6px;
+    transition: background 0.3s ease, transform 0.2s ease;
+}
+
+.service-card-button:hover {
+    background: #d02651;
+    transform: translateY(-2px);
+}
+
+/* Responsive Design */
+@media screen and (max-width: 1200px) {
+    .services-header-content,
+    .services-container {
+        padding: 0 30px;
+    }
+    
+    .services-container {
+        grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+        gap: 30px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .services-header {
+        padding: 100px 0 60px;
+    }
+    
+    .services-header-content,
+    .services-container {
+        padding: 0 20px;
+    }
+    
+    .services-title {
+        font-size: 36px;
+        line-height: 44px;
+    }
+    
+    .services-description {
+        font-size: 16px;
+    }
+    
+    .services-grid {
+        padding: 60px 0;
+    }
+    
+    .services-container {
+        grid-template-columns: 1fr;
+        gap: 24px;
+    }
+    
+    .service-card-content {
+        padding: 24px 20px;
+    }
+    
+    .service-card-title {
+        font-size: 20px;
+        line-height: 28px;
+    }
+}
+
+@media screen and (max-width: 480px) {
+    .services-header {
+        padding: 80px 0 50px;
+    }
+    
+    .services-header-content,
+    .services-container {
+        padding: 0 15px;
+    }
+    
+    .services-title {
+        font-size: 28px;
+        line-height: 36px;
+        margin-bottom: 20px;
+    }
+    
+    .services-description {
+        font-size: 15px;
+    }
+    
+    .services-grid {
+        padding: 50px 0;
+    }
+    
+    .service-card-image {
+        height: 180px;
+    }
+}
+
+/* Font Loading */
+@font-face {
+    font-family: 'Cal Sans';
+    src: url('/fonts/CalSans-SemiBold.woff2') format('woff2'),
+         url('/fonts/CalSans-SemiBold.woff') format('woff');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Regular.woff2') format('woff2'),
+         url('/fonts/Inter-Regular.woff') format('woff');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Inter';
+    src: url('/fonts/Inter-Medium.woff2') format('woff2'),
+         url('/fonts/Inter-Medium.woff') format('woff');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}

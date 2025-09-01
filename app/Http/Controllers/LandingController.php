@@ -255,6 +255,56 @@ class LandingController extends Controller
                 ->get();
         }
         
+        // Create default testimonials section if it doesn't exist
+        $testimonialsSection = $sections->where('key', 'testimonials')->first();
+        if (!$testimonialsSection) {
+            $testimonialsSection = Section::create([
+                'page_id' => $page->id,
+                'key' => 'testimonials',
+                'heading' => 'Trusted by Thousands',
+                'subheading' => 'Loved by Patients',
+                'content_json' => [
+                    'title' => 'Trusted by Thousands',
+                    'subtitle' => 'Loved by Patients',
+                    'items' => [
+                        [
+                            'quote' => 'The doctors here are amazing! They took great care of me and explained everything clearly. I felt comfortable and well cared for throughout my visit. The staff is professional and the facility is modern.',
+                            'author' => 'Sarah Johnson',
+                            'role' => 'Patient'
+                        ],
+                        [
+                            'quote' => 'Professional staff and excellent service. The consultation was thorough and the treatment plan was perfectly tailored to my needs. I highly recommend this medical center to anyone looking for quality healthcare.',
+                            'author' => 'Michael Chen',
+                            'role' => 'Patient'
+                        ],
+                        [
+                            'quote' => 'Outstanding healthcare experience! The facility is modern, clean, and the medical team is incredibly knowledgeable. My family trusts them completely for all our medical needs.',
+                            'author' => 'Emily Davis',
+                            'role' => 'Patient'
+                        ],
+                        [
+                            'quote' => 'I have been coming here for years and the care is consistently excellent. The doctors listen carefully and provide thorough explanations. The appointment booking process is smooth and efficient.',
+                            'author' => 'Robert Wilson',
+                            'role' => 'Patient'
+                        ],
+                        [
+                            'quote' => 'Great experience with the pediatric team! My children feel comfortable here and the doctors are wonderful with kids. The waiting area is child-friendly and the staff is very patient.',
+                            'author' => 'Jennifer Martinez',
+                            'role' => 'Patient'
+                        ]
+                    ]
+                ],
+                'position' => 6,
+                'is_visible' => true
+            ]);
+            
+            // Refresh sections collection
+            $sections = Section::where('page_id', $page->id)
+                ->where('is_visible', true)
+                ->orderBy('position')
+                ->get();
+        }
+        
         return view('landing.index', compact('page', 'sections'));
     }
 }
