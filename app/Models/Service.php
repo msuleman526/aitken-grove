@@ -14,6 +14,7 @@ class Service extends Model
         'slug',
         'title',
         'description',
+        'cover_image',
         'meta_title',
         'meta_description',
         'canonical_url',
@@ -55,7 +56,11 @@ class Service extends Model
 
     public function getHeroBackgroundUrl(): string
     {
-        // For now, always use the default background
+        // Use uploaded cover image if available, otherwise use default
+        if ($this->cover_image) {
+            return asset('storage/' . $this->cover_image);
+        }
+        
         return asset('images/service-cover.png');
     }
 

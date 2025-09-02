@@ -666,3 +666,55 @@ Timestamp: 2025-09-02 19:15:00
 
 Timestamp: 2025-09-02 19:30:00
 
+[2025-09-02 - Service Cover Image and Why Choose Title Issues Fixed] Successfully resolved both reported issues:
+
+**ISSUE 1 - Cover Image Upload Missing**: 
+✅ **Root Cause**: ServiceResource was missing a cover image field for service hero backgrounds
+✅ **Solution Implemented**:
+- Created migration: `2025_09_02_000004_add_cover_image_to_services_table.php`
+- Added `cover_image` field to services table (nullable string)
+- Updated Service model: Added `cover_image` to `$fillable` array
+- Updated ServiceResource: Added FileUpload component for cover image
+  * Field label: "Cover Image"
+  * Storage: `public` disk in `services/covers` directory
+  * File size limit: 2MB
+  * Recommended size: 1920x800px
+  * Helper text with guidance
+- Updated Service model `getHeroBackgroundUrl()` method:
+  * Uses uploaded cover image if available: `asset('storage/' . $this->cover_image)`
+  * Falls back to default: `asset('images/service-cover.png')`
+
+**ISSUE 2 - Why Choose Title Duplication**: 
+✅ **Root Cause**: Component hardcoded "Why Choose Our" and processed user's full title containing the same text
+✅ **Example Problem**: User enters "Why Choose Our Family Health Care?" → Component outputs "Why Choose Our Why Choose Our Family Health Care?"
+✅ **Solution Implemented**: Smart title processing in `why-choose-section.blade.php`:
+- **Detection**: Checks if user's title already contains "Why Choose Our" using `stripos()`
+- **Full Title Mode**: If detected, uses title as-is and highlights service names:
+  * Supports: Family Health Care, Pediatric Care, Women's Health, Mental Health, Dermatology, Weight Management
+  * Applies `<span class="title-highlight">` with primary color (#E62D5B)
+- **Service Name Mode**: If not detected, adds "Why Choose Our" prefix:
+  * Format: "Why Choose Our" + highlighted service name + "?"
+- **Fallback**: Default "Why Choose Our Family Health Care?" if no custom title
+
+**FILES MODIFIED**:
+- Database: `/database/migrations/2025_09_02_000004_add_cover_image_to_services_table.php`
+- Model: `/app/Models/Service.php` (fillable + getHeroBackgroundUrl method)
+- Resource: `/app/Filament/Resources/ServiceResource.php` (FileUpload component)
+- Component: `/resources/views/components/why-choose-section.blade.php` (smart title logic)
+- Helper Scripts: `run-migration.bat` and `fix-service-issues.php`
+
+**IMMEDIATE BENEFITS**:
+✅ Service creation now includes cover image upload option in Filament admin
+✅ Why Choose titles display correctly without duplication
+✅ Services can have custom hero backgrounds or use default fallback
+✅ Smart title processing handles both partial and full title inputs
+✅ Multiple service types supported with proper highlighting
+
+**NEXT STEPS**:
+1. Run `php artisan migrate` to apply database changes
+2. Test cover image upload in Filament admin panel
+3. Test Why Choose title with both full and partial titles
+4. Upload service-specific cover images for better visual appeal
+
+Timestamp: 2025-09-02 20:00:00
+

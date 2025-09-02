@@ -111,8 +111,8 @@ class SectionResource extends Resource
                         ->image()
                         ->imageResizeMode('contain')
                         ->imageCropAspectRatio('305:435')
-                        ->maxSize(2048)
-                        ->helperText('Recommended size: 305x435px. Max file size: 2MB')  
+                        ->maxSize(20480)
+                        ->helperText('Recommended size: 305x435px. Max file size: 20MB')  
                         ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp']),
                     FileUpload::make('content_json.top_right_image')
                         ->label('Top Right Image')
@@ -121,8 +121,8 @@ class SectionResource extends Resource
                         ->image()
                         ->imageResizeMode('contain')
                         ->imageCropAspectRatio('305:208')
-                        ->maxSize(2048)
-                        ->helperText('Recommended size: 305x207.5px. Max file size: 2MB')
+                        ->maxSize(20480)
+                        ->helperText('Recommended size: 305x207.5px. Max file size: 20MB')
                         ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp']),
                     FileUpload::make('content_json.bottom_right_image')
                         ->label('Bottom Right Image')
@@ -131,8 +131,8 @@ class SectionResource extends Resource
                         ->image()
                         ->imageResizeMode('contain')
                         ->imageCropAspectRatio('305:208')
-                        ->maxSize(2048)
-                        ->helperText('Recommended size: 305x207.5px. Max file size: 2MB')
+                        ->maxSize(20480)
+                        ->helperText('Recommended size: 305x207.5px. Max file size: 20MB')
                         ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp']),
                 ])
                 ->visible(fn ($get) => $get('key') === 'caring'),
@@ -258,8 +258,8 @@ class SectionResource extends Resource
                                 ->image()
                                 ->imageResizeMode('cover')
                                 ->imageCropAspectRatio('300:350')
-                                ->maxSize(2048)
-                                ->helperText('Recommended size: 300x350px. Max file size: 2MB')
+                                ->maxSize(20480)
+                                ->helperText('Recommended size: 300x350px. Max file size: 20MB')
                                 ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp']),
                         ])
                         ->defaultItems(5)

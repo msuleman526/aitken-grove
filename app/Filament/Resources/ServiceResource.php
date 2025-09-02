@@ -67,6 +67,14 @@ class ServiceResource extends Resource
                         ->rows(4)
                         ->maxLength(1000),
 
+                    FileUpload::make('cover_image')
+                        ->label('Cover Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('services/covers')
+                        ->maxSize(20480)
+                        ->helperText('Hero background image for the service page (recommended: 1920x800px). Max file size: 20MB.'),
+
                     Toggle::make('is_active')
                         ->label('Active')
                         ->default(true),
@@ -114,24 +122,24 @@ class ServiceResource extends Resource
                         ->image()
                         ->disk('public')
                         ->directory('services/why-choose')
-                        ->maxSize(2048)
-                        ->helperText('Large image displayed on the left side (recommended: 305x435px).'),
+                        ->maxSize(20480)
+                        ->helperText('Large image displayed on the left side (recommended: 305x435px). Max file size: 20MB.'),
 
                     FileUpload::make('why_choose_json.top_right_image')
                         ->label('Top Right Image')
                         ->image()
                         ->disk('public')
                         ->directory('services/why-choose')
-                        ->maxSize(2048)
-                        ->helperText('Top image on the right side (recommended: 305x207px).'),
+                        ->maxSize(20480)
+                        ->helperText('Top image on the right side (recommended: 305x207px). Max file size: 20MB.'),
 
                     FileUpload::make('why_choose_json.bottom_right_image')
                         ->label('Bottom Right Image')
                         ->image()
                         ->disk('public')
                         ->directory('services/why-choose')
-                        ->maxSize(2048)
-                        ->helperText('Bottom image on the right side (recommended: 305x207px).'),
+                        ->maxSize(20480)
+                        ->helperText('Bottom image on the right side (recommended: 305x207px). Max file size: 20MB.'),
 
                     Repeater::make('why_choose_json.points')
                         ->label('Why Choose Points')

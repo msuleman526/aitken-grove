@@ -8,16 +8,27 @@
                 @if(isset($service->why_choose_json['title']) && $service->why_choose_json['title'])
                     @php
                         $title = $service->why_choose_json['title'];
-                        $titleParts = explode('?', $title);
-                        $mainTitle = $titleParts[0] ?? $title;
-                        $questionPart = isset($titleParts[1]) ? '?' : '';
                         
-                        // Split the main title to make "Family Health Care" pink
-                        $highlightedTitle = str_ireplace('Family Health Care', '<span class="title-highlight">Family Health Care</span>', $mainTitle);
+                        // Check if title already contains "Why Choose Our" to avoid duplication
+                        if (stripos($title, 'Why Choose Our') !== false) {
+                            // User provided full title, use it as is but highlight the service name
+                            $highlightedTitle = $title;
+                            
+                            // Try to highlight various service names in primary color
+                            $serviceNames = ['Family Health Care', 'Pediatric Care', 'Women\'s Health', 'Mental Health', 'Dermatology', 'Weight Management'];
+                            foreach ($serviceNames as $serviceName) {
+                                if (stripos($title, $serviceName) !== false) {
+                                    $highlightedTitle = str_ireplace($serviceName, '<span class="title-highlight">' . $serviceName . '</span>', $highlightedTitle);
+                                    break;
+                                }
+                            }
+                            
+                            echo $highlightedTitle;
+                        } else {
+                            // User provided just the service name, add "Why Choose Our"
+                            echo '<span class="title-line-1">Why Choose Our</span><br><span class="title-line-2"><span class="title-highlight">' . $title . '</span>?</span>';
+                        }
                     @endphp
-                    
-                    <span class="title-line-1">Why Choose Our</span><br>
-                    <span class="title-line-2">{!! $highlightedTitle !!}{{ $questionPart }}</span>
                 @else
                     <span class="title-line-1">Why Choose Our</span><br>
                     <span class="title-line-2"><span class="title-highlight">Family Health Care</span>?</span>
