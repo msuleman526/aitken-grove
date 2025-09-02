@@ -9,6 +9,8 @@ use Filament\Forms\Components\TextInput;
 use Filament\Forms\Components\Textarea;
 use Filament\Forms\Components\Select;
 use Filament\Forms\Components\Toggle;
+use Filament\Forms\Components\Repeater;
+use Filament\Forms\Components\FileUpload;
 use Filament\Schemas\Components\Section;
 use Filament\Resources\Resource;
 use Filament\Tables;
@@ -90,6 +92,116 @@ class ServiceResource extends Resource
                         ->maxLength(1000)
                         ->placeholder('We believe good health begins at home. Our family health care services are designed to provide compassionate, continuous, and reliable care...')
                         ->helperText('Title text with smart color highlighting based on keywords.'),
+                ])->columns(1),
+
+            Section::make('Why Choose Section')
+                ->schema([
+                    TextInput::make('why_choose_json.title')
+                        ->label('Section Title')
+                        ->maxLength(255)
+                        ->placeholder('Why Choose Our Family Health Care?')
+                        ->helperText('Main title for the why choose section.'),
+
+                    Textarea::make('why_choose_json.description')
+                        ->label('Section Description')
+                        ->rows(3)
+                        ->maxLength(500)
+                        ->placeholder('We understand that every family deserves care that is reliable, personal, and convenient. Here\'s why families trust us:')
+                        ->helperText('Description text that appears below the title.'),
+
+                    FileUpload::make('why_choose_json.main_image')
+                        ->label('Main Image (Left)')
+                        ->image()
+                        ->disk('public')
+                        ->directory('services/why-choose')
+                        ->maxSize(2048)
+                        ->helperText('Large image displayed on the left side (recommended: 305x435px).'),
+
+                    FileUpload::make('why_choose_json.top_right_image')
+                        ->label('Top Right Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('services/why-choose')
+                        ->maxSize(2048)
+                        ->helperText('Top image on the right side (recommended: 305x207px).'),
+
+                    FileUpload::make('why_choose_json.bottom_right_image')
+                        ->label('Bottom Right Image')
+                        ->image()
+                        ->disk('public')
+                        ->directory('services/why-choose')
+                        ->maxSize(2048)
+                        ->helperText('Bottom image on the right side (recommended: 305x207px).'),
+
+                    Repeater::make('why_choose_json.points')
+                        ->label('Why Choose Points')
+                        ->schema([
+                            TextInput::make('text')
+                                ->label('Point Text')
+                                ->required()
+                                ->maxLength(255)
+                                ->placeholder('Personalized care plans for every family member')
+                                ->helperText('A key benefit or feature point.'),
+                        ])
+                        ->itemLabel(fn (array $state): ?string => $state['text'] ?? null)
+                        ->collapsed()
+                        ->minItems(1)
+                        ->maxItems(10)
+                        ->defaultItems(5)
+                        ->addActionLabel('Add Point')
+                        ->helperText('Key points that highlight why customers should choose this service.'),
+                ])->columns(2),
+
+            Section::make('Questions Section')
+                ->schema([
+                    TextInput::make('questions_json.title')
+                        ->label('Section Title')
+                        ->maxLength(255)
+                        ->placeholder('Frequently Asked Questions')
+                        ->helperText('Main title for the questions section.'),
+
+                    Repeater::make('questions_json.items')
+                        ->label('Questions & Answers')
+                        ->schema([
+                            Textarea::make('question')
+                                ->label('Question')
+                                ->required()
+                                ->rows(2)
+                                ->maxLength(500)
+                                ->placeholder('What ages do you provide family health care for?')
+                                ->helperText('The question text.'),
+
+                            Textarea::make('answer')
+                                ->label('Answer')
+                                ->required()
+                                ->rows(3)
+                                ->maxLength(1000)
+                                ->placeholder('We provide comprehensive health care for all ages, from newborns to seniors. Our family-focused approach ensures everyone in your family receives appropriate care.')
+                                ->helperText('The answer text that will be displayed when the question is expanded.'),
+                        ])
+                        ->itemLabel(fn (array $state): ?string => $state['question'] ?? null)
+                        ->collapsed()
+                        ->minItems(1)
+                        ->maxItems(20)
+                        ->defaultItems(5)
+                        ->addActionLabel('Add Question')
+                        ->helperText('Frequently asked questions for this service.'),
+                ])->columns(1),
+
+            Section::make('Service CTA Section')
+                ->schema([
+                    TextInput::make('consultant_json.title')
+                        ->label('Section Title')
+                        ->maxLength(255)
+                        ->placeholder('Start Your Family\'s Care Today')
+                        ->helperText('Main title for the service call-to-action section.'),
+
+                    Textarea::make('consultant_json.description')
+                        ->label('Section Description')
+                        ->rows(3)
+                        ->maxLength(500)
+                        ->placeholder('Take the first step toward better family health. Our dedicated doctors are here to provide personalized care and guidance.')
+                        ->helperText('Description text that appears below the title.'),
                 ])->columns(1),
 
             Section::make('SEO & Meta Data')

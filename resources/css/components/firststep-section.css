@@ -42,7 +42,7 @@
 .firststep-title {
     width: 539px;
     height: 96px;
-    font-family: 'Cal Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Cal Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
@@ -103,7 +103,7 @@
     .firststep-container {
         padding: 0 30px;
     }
-    
+
     .firststep-background {
         width: 100%;
         max-width: 1200px;
@@ -118,14 +118,14 @@
         height: 320px;
         padding-left: 50px;
     }
-    
+
     .firststep-title {
         width: 100%;
         max-width: 480px;
         height: auto;
         font-size: 36px;
     }
-    
+
     .firststep-description {
         width: 100%;
         max-width: 480px;
@@ -139,11 +139,11 @@
         height: auto;
         padding: 40px 0;
     }
-    
+
     .firststep-container {
         padding: 0 20px;
     }
-    
+
     .firststep-background {
         width: 100%;
         height: 280px;
@@ -151,13 +151,13 @@
         justify-content: center;
         text-align: center;
     }
-    
+
     .firststep-content {
         align-items: center;
         text-align: center;
         max-width: 100%;
     }
-    
+
     .firststep-title {
         width: 100%;
         max-width: 350px;
@@ -165,7 +165,7 @@
         font-size: 28px;
         line-height: 130%;
     }
-    
+
     .firststep-description {
         width: 100%;
         max-width: 350px;
@@ -173,7 +173,7 @@
         font-size: 15px;
         line-height: 140%;
     }
-    
+
     .firststep-btn {
         width: 180px;
         height: 50px;
@@ -186,28 +186,28 @@
     .firststep-container {
         padding: 0 15px;
     }
-    
+
     .firststep-background {
         height: 250px;
         padding: 30px 20px;
         border-radius: 8px;
     }
-    
+
     .firststep-content {
         gap: 20px;
     }
-    
+
     .firststep-title {
         max-width: 280px;
         font-size: 24px;
         line-height: 125%;
     }
-    
+
     .firststep-description {
         max-width: 280px;
         font-size: 14px;
     }
-    
+
     .firststep-btn {
         width: 160px;
         height: 46px;

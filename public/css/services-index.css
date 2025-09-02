@@ -17,7 +17,7 @@
 }
 
 .services-title {
-    font-family: 'Cal Sans', sans-serif;
+    font-family: 'Cal Sans';
     font-weight: 600;
     font-size: 48px;
     line-height: 58px;
@@ -85,7 +85,7 @@
 }
 
 .service-card-title {
-    font-family: 'Cal Sans', sans-serif;
+    font-family: 'Cal Sans';
     font-weight: 600;
     font-size: 24px;
     line-height: 32px;
@@ -124,11 +124,12 @@
 
 /* Responsive Design */
 @media screen and (max-width: 1200px) {
+
     .services-header-content,
     .services-container {
         padding: 0 30px;
     }
-    
+
     .services-container {
         grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
         gap: 30px;
@@ -139,34 +140,34 @@
     .services-header {
         padding: 100px 0 60px;
     }
-    
+
     .services-header-content,
     .services-container {
         padding: 0 20px;
     }
-    
+
     .services-title {
         font-size: 36px;
         line-height: 44px;
     }
-    
+
     .services-description {
         font-size: 16px;
     }
-    
+
     .services-grid {
         padding: 60px 0;
     }
-    
+
     .services-container {
         grid-template-columns: 1fr;
         gap: 24px;
     }
-    
+
     .service-card-content {
         padding: 24px 20px;
     }
-    
+
     .service-card-title {
         font-size: 20px;
         line-height: 28px;
@@ -177,26 +178,26 @@
     .services-header {
         padding: 80px 0 50px;
     }
-    
+
     .services-header-content,
     .services-container {
         padding: 0 15px;
     }
-    
+
     .services-title {
         font-size: 28px;
         line-height: 36px;
         margin-bottom: 20px;
     }
-    
+
     .services-description {
         font-size: 15px;
     }
-    
+
     .services-grid {
         padding: 50px 0;
     }
-    
+
     .service-card-image {
         height: 180px;
     }
@@ -206,7 +207,7 @@
 @font-face {
     font-family: 'Cal Sans';
     src: url('/fonts/CalSans-SemiBold.woff2') format('woff2'),
-         url('/fonts/CalSans-SemiBold.woff') format('woff');
+        url('/fonts/CalSans-SemiBold.woff') format('woff');
     font-weight: 600;
     font-style: normal;
     font-display: swap;
@@ -215,7 +216,7 @@
 @font-face {
     font-family: 'Inter';
     src: url('/fonts/Inter-Regular.woff2') format('woff2'),
-         url('/fonts/Inter-Regular.woff') format('woff');
+        url('/fonts/Inter-Regular.woff') format('woff');
     font-weight: 400;
     font-style: normal;
     font-display: swap;
@@ -224,7 +225,7 @@
 @font-face {
     font-family: 'Inter';
     src: url('/fonts/Inter-Medium.woff2') format('woff2'),
-         url('/fonts/Inter-Medium.woff') format('woff');
+        url('/fonts/Inter-Medium.woff') format('woff');
     font-weight: 500;
     font-style: normal;
     font-display: swap;

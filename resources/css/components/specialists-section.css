@@ -32,7 +32,7 @@
 }
 
 .specialists-title {
-    font-family: 'Cal Sans', sans-serif;
+    font-family: 'Cal Sans';
     font-style: normal;
     font-weight: 600;
     font-size: 40px;
@@ -118,14 +118,17 @@
     scroll-behavior: smooth;
     width: 100%;
     padding: 20px 0;
-    
+
     /* Hide scrollbar but keep functionality */
-    scrollbar-width: none; /* Firefox */
-    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none;
+    /* Firefox */
+    -ms-overflow-style: none;
+    /* IE and Edge */
 }
 
 .specialists-scroll::-webkit-scrollbar {
-    display: none; /* Chrome, Safari, Opera */
+    display: none;
+    /* Chrome, Safari, Opera */
 }
 
 /* Specialist Card */
@@ -202,7 +205,7 @@
 }
 
 .specialist-name {
-    font-family: 'Cal Sans', sans-serif;
+    font-family: 'Cal Sans';
     font-style: normal;
     font-weight: 500;
     font-size: 18px;
@@ -238,31 +241,31 @@
         height: auto;
         padding: 60px 0;
     }
-    
+
     .specialists-container {
         padding: 0 20px;
         gap: 40px;
     }
-    
+
     .specialists-title {
         font-size: 32px;
     }
-    
+
     .specialists-description {
         font-size: 16px;
     }
-    
+
     .specialist-card {
         width: 280px;
         height: 330px;
     }
-    
+
     .specialist-info-card {
         width: 240px;
         height: 78px;
         padding: 14px;
     }
-    
+
     .specialists-nav {
         width: 50px;
         height: 50px;
@@ -275,40 +278,40 @@
         padding: 0 15px;
         gap: 30px;
     }
-    
+
     .specialists-title {
         font-size: 28px;
     }
-    
+
     .specialists-description {
         font-size: 14px;
     }
-    
+
     .specialist-card {
         width: 260px;
         height: 310px;
     }
-    
+
     .specialist-info-card {
         width: 220px;
         height: 74px;
         padding: 12px;
     }
-    
+
     .specialist-name {
         font-size: 16px;
     }
-    
+
     .specialist-role {
         font-size: 13px;
     }
-    
+
     .specialists-nav {
         width: 45px;
         height: 45px;
         padding: 10px;
     }
-    
+
     .specialists-nav svg {
         width: 20px;
         height: 20px;
@@ -320,16 +323,16 @@
     .specialist-card:hover {
         transform: none;
     }
-    
+
     .specialist-card:active {
         transform: scale(0.98);
     }
-    
+
     .specialists-nav:hover {
         background: #F5F5F5;
         transform: none;
     }
-    
+
     .specialists-nav:active {
         background: #E5E5E5;
         transform: scale(0.98);
@@ -342,6 +345,7 @@
         opacity: 0;
         transform: translateY(30px);
     }
+
     to {
         opacity: 1;
         transform: translateY(0);
@@ -352,8 +356,22 @@
     animation: fadeInUp 0.6s ease forwards;
 }
 
-.specialist-card:nth-child(1) { animation-delay: 0.1s; }
-.specialist-card:nth-child(2) { animation-delay: 0.2s; }
-.specialist-card:nth-child(3) { animation-delay: 0.3s; }
-.specialist-card:nth-child(4) { animation-delay: 0.4s; }
-.specialist-card:nth-child(5) { animation-delay: 0.5s; }
+.specialist-card:nth-child(1) {
+    animation-delay: 0.1s;
+}
+
+.specialist-card:nth-child(2) {
+    animation-delay: 0.2s;
+}
+
+.specialist-card:nth-child(3) {
+    animation-delay: 0.3s;
+}
+
+.specialist-card:nth-child(4) {
+    animation-delay: 0.4s;
+}
+
+.specialist-card:nth-child(5) {
+    animation-delay: 0.5s;
+}

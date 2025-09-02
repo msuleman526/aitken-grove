@@ -1,0 +1,29 @@
+/* Service Page Testimonials Overrides */
+/* Override testimonials section background for service pages */
+.testimonials-section {
+    background: #FFFFFF !important;
+}
+
+/* Override testimonial card background for service pages */
+.testimonials-card {
+    background: #F5F5F5 !important;
+}
+
+/* Ensure text contrast remains good on the new card background */
+.testimonials-card .testimonials-comment,
+.testimonials-card .testimonials-name,
+.testimonials-card .testimonials-role {
+    color: #000000;
+}
+
+/* Ensure no animations or shadows on service pages */
+.testimonials-card {
+    animation: none !important;
+    transition: none !important;
+    box-shadow: none !important;
+}
+
+.testimonials-card:hover {
+    transform: none !important;
+    box-shadow: none !important;
+}

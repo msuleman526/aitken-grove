@@ -111,20 +111,18 @@
     width: 500px;
     height: 280px;
     background: #FFFFFF;
-    border-radius: 16px;
+    border-radius: 50px;
     padding: 40px 32px;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     flex-shrink: 0;
-    transition: all 0.3s ease;
     box-sizing: border-box;
+    /* No animations, transitions, or box shadows */
 }
 
 .testimonials-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
+    /* No hover effects */
 }
 
 .testimonials-content {
@@ -287,43 +285,6 @@
 @font-face {
     font-family: 'Inter';
     font-display: swap;
-}
-
-/* Animation Enhancements */
-.testimonials-card {
-    animation: testimonials-fadeIn 0.6s ease-out;
-}
-
-@keyframes testimonials-fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(20px);
-    }
-
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-.testimonials-cards .testimonials-card:nth-child(1) {
-    animation-delay: 0.1s;
-}
-
-.testimonials-cards .testimonials-card:nth-child(2) {
-    animation-delay: 0.2s;
-}
-
-.testimonials-cards .testimonials-card:nth-child(3) {
-    animation-delay: 0.3s;
-}
-
-.testimonials-cards .testimonials-card:nth-child(4) {
-    animation-delay: 0.4s;
-}
-
-.testimonials-cards .testimonials-card:nth-child(5) {
-    animation-delay: 0.5s;
 }
 
 /* Focus states for accessibility */

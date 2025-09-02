@@ -116,7 +116,7 @@
 
 .title-primary {
     color: #E62D5B;
-    margin-left: 10px;
+    margin-left: 3px;
 }
 
 .testimonials-nav {
@@ -179,15 +179,10 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     flex-shrink: 0;
     transition: all 0.3s ease;
 }
 
-.testimonials-card:hover {
-    transform: translateY(-4px);
-    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.12);
-}
 
 .testimonials-content {
     display: flex;

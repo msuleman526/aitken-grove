@@ -55,3 +55,413 @@
 - Responsive design maintains exact specifications across all device sizes
 - Enhanced with modern UX features: touch support, keyboard navigation, smooth animations
 
+[2025-09-02 - WhyChoose Section for Service Pages] Successfully created comprehensive WhyChoose section for service pages:
+
+- **Database Migration**: Added why_choose_json field to services table (JSON column)
+- **Service Model**: Updated to include why_choose_json in fillable fields and cast as array
+
+- **ServiceResource Enhancement**: Extended Filament form with WhyChoose section:
+  * Section title input field (editable heading)
+  * Description textarea (editable supporting text)
+  * Three image upload fields: main_image (left), top_right_image, bottom_right_image
+  * Directory: services/why-choose with 2MB size limit
+  * Repeater field for points (up to 10 editable benefit points)
+  * All fields have proper placeholders, validation, and helper text
+
+- **WhyChoose Component**: Created why-choose-section.blade.php with exact design specifications:
+  * Similar layout to caring-section from home page
+  * Smart title parsing: "Why Choose Our" + highlighted "Family Health Care?"
+  * #E62D5B color for highlighted text (Family Health Care portion)
+  * Support for custom titles, descriptions, images, and points
+  * Fallback to default content if no custom data is provided
+  * Uses same image layout: main left image + two stacked right images
+
+- **CSS Styling**: Created why-choose-section.css with complete responsive design:
+  * Background color: #EFF9F9 (as specified in requirements)
+  * Full-screen width background with 1440px max-width content container
+  * Content padding: 45px left/right on desktop, responsive on mobile
+  * Height: 555px with proper centering
+  * Two-column grid layout matching caring-section structure
+  * Cal Sans font for titles, Inter font for description and points
+  * Image dimensions: 305x435px main, 305x207.5px for right images
+  * Responsive breakpoints: 1200px, 768px, 480px with appropriate scaling
+  * Mobile-first responsive design maintaining visual hierarchy
+
+- **Service Show Page Integration**:
+  * Added why-choose-section.css to stylesheets
+  * Included <x-why-choose-section> component after about-service section
+  * Maintains proper page flow and layout structure
+
+- **ServiceSeeder Enhancement**: Added default WhyChoose data for key services:
+  * Family Health Care: 5 comprehensive benefit points
+  * Pediatric Care: 5 specialized child-care focused points
+  * Women's Health: 5 women-specific healthcare benefits
+  * All with appropriate titles and descriptions
+
+- **Fully Editable**: All content (title, description, images, points) can be managed via Filament admin panel
+- **Responsive Design**: Maintains exact specifications across all device sizes
+- **Background Color**: #EFF9F9 as specified in requirements (different from home page #E9F9F9)
+- **Consistent Styling**: Matches caring-section layout while maintaining service page identity
+
+Timestamp: 2025-09-02 14:30:00
+
+[2025-09-02 - Service CTA Section for Service Pages] Successfully created Service CTA call-to-action section for service pages:
+
+- **Important Note**: Renamed from "consultant-section" to "service-cta-section" to avoid conflicts with existing consultant-bar component
+- **Database Migration**: Added consultant_json field to services table (JSON column) - kept field name for consistency
+- **Service Model**: Updated to include consultant_json in fillable fields and cast as array
+
+- **ServiceResource Enhancement**: Extended Filament form with "Service CTA Section":
+  * Section title input field (editable heading)
+  * Description textarea (editable supporting text)
+  * Simple two-field form focused on content customization
+  * Proper placeholders, validation, and helper text
+
+- **Service CTA Component**: Created service-cta-section.blade.php with exact design specifications:
+  * Similar layout to firststep-section from home page
+  * Gradient background with step-background.png image
+  * White text on gradient background with call-to-action button
+  * Editable title and description, fixed "Book a Consultant" button
+  * Fallback to default content if no custom data is provided
+  * Left-aligned content layout matching original design
+
+- **CSS Styling**: Created service-cta-section.css with complete responsive design:
+  * Height: 406px section with centered container
+  * Background: step-background.png with gradient overlay
+  * Content container: 1320px width with 80px left padding
+  * Cal Sans font for titles (40px), Inter font for description (18px)
+  * White button with primary color text, hover effects and animations
+  * Responsive breakpoints: 1400px, 1200px, 768px, 480px with appropriate scaling
+  * Mobile-first responsive design with centered content on smaller screens
+
+- **Service Show Page Integration**:
+  * Added service-cta-section.css to stylesheets
+  * Included <x-service-cta-section> component after why-choose section
+  * Maintains proper page flow before footer
+
+- **ServiceSeeder Enhancement**: Added default Service CTA data for key services:
+  * Family Health Care: "Start Your Family's Care Today" with family-focused message
+  * Pediatric Care: "Give Your Child the Best Care" with child-specific message
+  * Women's Health: "Your Health Journey Starts Here" with women-focused message
+  * All with appropriate titles and descriptions tailored to service type
+
+- **Key Features**:
+  * Only title and description are editable (as requested)
+  * Fixed "Book a Consultant" button with consistent styling
+  * Same visual design as firststep-section but customized for service pages
+  * Full responsive design maintaining visual hierarchy across devices
+  * Smooth hover animations and professional styling
+  * Does NOT interfere with existing consultant-bar component
+
+- **Fully Manageable**: Title and description content can be easily edited via Filament admin panel
+- **Consistent Design**: Matches firststep-section layout while maintaining service page identity
+- **Professional CTA**: Encourages user engagement with prominent call-to-action
+- **Clear Separation**: Distinct from consultant-bar (horizontal bar with contact info)
+
+Timestamp: 2025-09-02 15:15:00
+
+[2025-09-02 - Faces Section for Service Pages] Successfully created Faces Behind Your Care section for service pages:
+
+- **Standalone Component**: Created as separate component that doesn't require database changes or service-specific customization
+- **Fixed Content**: Same content across all services - no need for individual updates
+
+- **Faces Component**: Created faces-section.blade.php with exact design specifications:
+  * Similar layout to specialists-section from home page
+  * Fixed title: "Faces Behind Your Care" with "Your Care" in primary color
+  * Fixed description: "Meet the doctors who treat every patient like family."
+  * Same doctor cards with horizontal scroll functionality
+  * Navigation buttons and "View All" button included
+  * Uses default specialist images and data
+
+- **CSS Styling**: Created faces-section.css with complete responsive design:
+  * Background color: #F5F5F5 (as specified in requirements)
+  * Height: 681px section with centered container
+  * Same card design: 300x350px with gradient overlays
+  * White navigation buttons (different from specialists' #F5F5F5 buttons)
+  * Primary color "View All" button with hover animations
+  * Cal Sans font for titles (40px), Inter font for description (18px)
+  * Responsive breakpoints: 1200px, 768px, 480px with appropriate scaling
+  * Smooth scroll functionality and card animations
+
+- **Service Show Page Integration**:
+  * Added faces-section.css to stylesheets
+  * Included <x-faces-section /> component after why-choose section and before service-cta
+  * No props needed - completely self-contained
+
+- **Key Features**:
+  * Same across all services - update once, applies everywhere
+  * No database storage needed - content is hardcoded
+  * Same functionality as specialists-section (scroll, navigation, animations)
+  * Different background color (#F5F5F5 vs #FFFFFF)
+  * Professional presentation matching the site's design language
+  * Fixed content eliminates need for content management
+
+- **Doctor Cards Include**:
+  * Dr. Salman Raza - Senior Orthopedic Surgeon
+  * Dr. Ayesha Khan - Consultant Cardiologist
+  * Dr. Maria Ahmed - Pediatrician & Child Specialist
+  * Dr. Hassan Malik - Neurologist
+  * Dr. Sarah Johnson - Gynecologist
+
+- **Design Consistency**: Matches specialists-section layout while maintaining unique identity for service pages
+- **No Admin Panel**: No need for content management since it's the same across all services
+- **Professional Presentation**: Builds trust by showcasing the medical team
+
+Timestamp: 2025-09-02 15:30:00
+
+[2025-09-02 - Testimonials Section Added to Service Pages] Successfully integrated existing testimonials-section into service pages:
+
+- **Reusing Existing Component**: Used the same testimonials-section.blade.php component from home page
+- **No New Code**: No need to create new section, just integrated existing one
+
+- **ServiceController Enhancement**: Updated to fetch testimonials section from home page:
+  * Added Section model import
+  * Fetch testimonials section where key='testimonials' and is_visible=true
+  * Pass testimonialsSection data to service show view
+  * Maintains same testimonials content across home and service pages
+
+- **Service Show Page Integration**:
+  * Added testimonials-section.css to stylesheets
+  * Included testimonials section after faces-section and before service-cta-section
+  * Added null check (@if($testimonialsSection)) for safety
+  * Uses @include directive to pass section data correctly
+
+- **Content Management**:
+  * Testimonials content managed through home page admin panel
+  * Same testimonials appear on both home page and all service pages
+  * Update once in admin panel, applies everywhere
+  * No duplicate content management needed
+
+- **Section Features (inherited from home page)**:
+  * Background: #E9F9F9 (teal background)
+  * Title: "Trusted by Thousands" + "Loved by Patients" (with primary color)
+  * Horizontal scrolling testimonial cards (500x280px)
+  * Navigation arrows with smooth scroll functionality
+  * Touch/swipe support for mobile devices
+  * Responsive design with proper breakpoints
+
+- **Service Page Order** (updated):
+  1. Service Hero
+  2. About Service
+  3. Why Choose Section (editable per service)
+  4. Faces Section (fixed content)
+  5. **Testimonials Section** (from home page)
+  6. Service CTA Section (editable per service)
+  7. Footer
+
+- **Key Benefits**:
+  * Same proven testimonials across all pages
+  * Consistent user experience
+  * Single point of content management
+  * No additional database storage needed
+  * Builds trust and credibility on service pages
+
+- **Technical Implementation**: Clean integration without code duplication or new components
+- **Content Consistency**: Same testimonials build trust across entire website
+- **Efficient Management**: Update testimonials once, appears everywhere
+
+- **Service Page Styling Override**: Created service-testimonials-override.css:
+  * Section background: #FFFFFF (white) instead of #E9F9F9
+  * Testimonial cards background: #F5F5F5 (light gray) instead of white
+  * Maintains proper text contrast and readability
+  * Uses !important to ensure override of home page styles
+  * Loaded after main testimonials CSS for proper cascading
+
+- **Global Testimonials Styling Updates**: Completely rewrote testimonials-section.css:
+  * Card border-radius: 50px (highly rounded) on both home and service pages
+  * Removed ALL box shadows from testimonials cards completely
+  * Disabled ALL hover animations (transform and shadow effects)
+  * Disabled ALL fade-in animations and transitions from cards
+  * Clean, static card design across entire website
+  * Maintains scroll functionality while removing all visual effects
+  * Navigation buttons retain their animations for functionality
+  * Enhanced service override file with additional !important rules to ensure no effects
+
+Timestamp: 2025-09-02 15:50:00
+
+[2025-09-02 - Global Testimonials Styling Update] Updated testimonials card appearance globally (both home and service pages):
+
+- **Global Testimonials Changes**: Updated testimonials-section.css for both home and service pages:
+  * Card border-radius: 50px for properly rounded appearance on all pages
+  * Removed box shadow completely for clean, flat design on all pages
+  * Disabled all animations and transitions:
+    - Removed hover transform and shadow effects
+    - Removed fade-in animations on page load
+    - Set transition: none for static appearance
+  * Clean, professional static design across entire website
+
+- **Service Page Specific Overrides**: Simplified service-testimonials-override.css:
+  * Section background: #FFFFFF (white) instead of #E9F9F9 (teal)
+  * Testimonial cards background: #F5F5F5 (light gray) instead of white
+  * Text contrast maintained for readability
+
+- **Visual Consistency**: Both pages now have the same rounded cards without animations
+- **Different Backgrounds**: Home page keeps teal section with white cards, service pages have white section with gray cards
+- **Professional Appearance**: Clean, static design without distracting animations or shadows
+
+Timestamp: 2025-09-02 16:00:00
+
+[2025-09-02 - Questions Section for Service Pages] Successfully created comprehensive Questions (FAQ) section for service pages:
+
+- **Database Migration**: Added questions_json field to services table (JSON column)
+- **Service Model**: Updated to include questions_json in fillable fields and cast as array
+
+- **ServiceResource Enhancement**: Extended Filament form with Questions section:
+  * Section title input field (editable heading)
+  * Repeater field for questions and answers (up to 20 Q&A pairs)
+  * Question field: 500 character limit, required
+  * Answer field: 1000 character limit, required
+  * Intuitive collapsed items with question preview
+  * Proper placeholders, validation, and helper text
+
+- **Questions Component**: Created questions-section.blade.php with exact design specifications:
+  * Section height: 640px with #EFF9F9 background color
+  * Title styling: Cal Sans font, 40px, centered, 120% line-height
+  * Question width: max 900px container with responsive design
+  * Interactive expand/collapse functionality with custom plus icon
+  * Plus icon: 32x32 SVG with #E62D5B primary color and white plus symbol
+  * Question styling: Inter font, 600 weight, 18px, 150% line-height
+  * Answer styling: Inter font, 400 weight, 16px, gray color
+
+- **CSS Styling**: Created questions-section.css with complete responsive design:
+  * Exact specifications: 640px height, #EFF9F9 background, 900px max width
+  * Question cards: white background, 12px border-radius, hover effects
+  * Interactive plus icon with rotate animation (45deg when expanded)
+  * Answer content with fade-in display and border separation
+  * Responsive breakpoints: 1200px, 768px, 480px with appropriate scaling
+  * Mobile-friendly design with smaller fonts and adjusted padding
+
+- **JavaScript Functionality**: Added toggleQuestion function:
+  * Click to expand/collapse answers
+  * Smooth icon rotation animation (0deg to 45deg)
+  * Toggle display of answer content
+  * Individual question state management
+
+- **Service Show Page Integration**:
+  * Added questions-section.css to stylesheets
+  * Included <x-questions-section> component after testimonials section
+  * Maintains proper page flow before footer
+
+- **ServiceSeeder Enhancement**: Added default Questions data for key services:
+  * Family Health Care: 5 family-focused frequently asked questions
+  * Pediatric Care: 5 child-care specific questions and answers
+  * Women's Health: 5 women's health focused Q&A pairs
+  * Professional, informative answers covering common concerns
+  * Realistic healthcare FAQ content for each service type
+
+- **Key Features**:
+  * Fully editable questions and answers via Filament admin panel
+  * Custom SVG plus icon (no external dependencies)
+  * Interactive expand/collapse with smooth animations
+  * Professional healthcare-focused content
+  * Responsive design maintaining exact specifications
+  * Individual service customization for relevant Q&A content
+
+- **Typography Compliance**: Exact specification adherence:
+  * Title: Cal Sans, 400 weight, 40px, 120% line-height, centered
+  * Questions: Inter font, 600 weight, 18px, 150% line-height, black color
+  * Answers: Inter font, 400 weight, 16px, 150% line-height, gray color
+  * Plus icon: 32x32 with primary color background and white plus symbol
+
+- **Fully Manageable**: All content (title, questions, answers) can be easily edited via Filament admin panel
+- **Service-Specific**: Each service can have unique, relevant questions and answers
+- **Professional Design**: Matches overall site design language with healthcare focus
+- **User-Friendly**: Intuitive expand/collapse interface with visual feedback
+
+Timestamp: 2025-09-02 16:45:00
+
+[2025-09-02 - Questions Section Final Implementation] Successfully completed Questions (FAQ) section for service pages with exact specifications:
+
+**FINAL IMPLEMENTATION STATUS: ✅ COMPLETE**
+
+- **Design Specifications Met**:
+  * Section height: 640px with #EFF9F9 background color ✅
+  * Title styling: "Frequently" (black) + "Asked Questions" (primary #E62D5B) ✅
+  * Question container: max 900px width with responsive design ✅
+  * Question styling: Inter font, 600 weight, 18px, 150% line-height ✅
+  * Plus icon: 32x32 SVG with #E62D5B background and white plus symbol ✅
+  * Interactive expand/collapse with 45° rotation animation ✅
+
+- **Default Questions Implementation**: 
+  * "What ages do you provide family health care for?" ✅
+  * "Can I book an appointment for multiple family members at once?" ✅
+  * "Do you offer preventive check-ups and screenings?" ✅
+  * "Will I see the same doctor each time?" ✅
+  * "Do you accept walk-in patients?" ✅
+
+- **Admin Panel Integration**:
+  * Fully editable Questions section in ServiceResource ✅
+  * Title field with "Frequently Asked Questions" placeholder ✅
+  * Repeater field for up to 20 Q&A pairs ✅
+  * Question field: 500 char limit, required ✅
+  * Answer field: 1000 char limit, required ✅
+  * Collapsed items with question preview ✅
+  * "Add Question" button functionality ✅
+  * Drag & drop reordering capability ✅
+
+- **Database & Backend**:
+  * Migration: Added questions_json field to services table ✅
+  * Service Model: Updated with questions_json casting ✅
+  * ServiceSeeder: Default questions for key services ✅
+  * Component: Smart fallback to default questions ✅
+
+- **Frontend Features**:
+  * Custom questions display when configured ✅
+  * Default 5 questions when no custom data ✅
+  * Interactive click-to-expand functionality ✅
+  * Smooth plus icon rotation (0° to 45°) ✅
+  * Professional healthcare-focused answers ✅
+  * Responsive design across all devices ✅
+
+- **Typography & Styling**:
+  * Cal Sans font for title (40px, 400 weight, 120% line-height, centered) ✅
+  * Inter font for questions (18px, 600 weight, 150% line-height, black) ✅
+  * Inter font for answers (16px, 400 weight, 150% line-height, gray) ✅
+  * White question cards with 12px border-radius ✅
+  * Hover effects and professional styling ✅
+
+- **Service Integration**:
+  * Added to all service show pages ✅
+  * CSS file: questions-section.css ✅
+  * Component: questions-section.blade.php ✅
+  * JavaScript: toggleQuestion function ✅
+  * Page order: After testimonials, before footer ✅
+
+**RESULT**: Questions section now displays perfectly on all service pages with the exact design shown in the reference image. Users can click any question to expand/collapse answers with smooth animations. Admin can fully customize questions per service through the Filament panel.
+
+Timestamp: 2025-09-02 17:00:00
+
+[2025-09-02 - Image Storage Issue Fixed] Successfully resolved service page image upload issue:
+
+**ISSUE IDENTIFIED**: FileUpload components in ServiceResource were missing `->disk('public')` configuration, causing images to be stored in private storage (`storage/app/private`) instead of public storage (`storage/app/public`). This made images inaccessible via web URLs like `/storage/services/why-choose/filename.png`.
+
+**RESOLUTION IMPLEMENTED**:
+
+- **ServiceResource Fix**: Added `->disk('public')` to all three FileUpload components in Why Choose Section:
+  * main_image (Left image) ✅
+  * top_right_image (Top right image) ✅  
+  * bottom_right_image (Bottom right image) ✅
+
+- **Existing Images Migration**: Successfully moved all existing images from private to public storage:
+  * Created `/storage/app/public/services/why-choose/` directory structure ✅
+  * Moved 3 existing images: `01K44MP1JZ5AV2MDXBEMHAVPVR.png`, `01K44MP1K5ZRW4KD7M74QAMVDG.png`, `01K44MP1K70SHYQ1T19Q8345MM.png` ✅
+  * Verified images are accessible via public symlink ✅
+  * Cleaned up empty private storage directory ✅
+
+- **Storage Configuration Verified**:
+  * Public disk correctly configured: `storage/app/public` ✅
+  * Symlink exists: `public/storage` → `storage/app/public` ✅
+  * Images now accessible via: `http://aitken-grove.test/storage/services/why-choose/filename.png` ✅
+
+**RESULT**: All service page image uploads now work correctly. New images will be automatically stored in public storage and immediately accessible via web URLs. Existing images are preserved and working.
+
+**TECHNICAL DETAILS**:
+- Laravel Filesystem: Using `public` disk instead of default `local` disk
+- Storage Path: `/storage/app/public/services/why-choose/`
+- Web Access: Via symlink `/public/storage/services/why-choose/`
+- Filament Configuration: Added `->disk('public')` to FileUpload components
+
+**NO BREAKING CHANGES**: All existing functionality preserved, images migrated safely.
+
+Timestamp: 2025-09-02 17:30:00
+

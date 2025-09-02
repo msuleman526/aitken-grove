@@ -20,12 +20,18 @@ class Service extends Model
         'meta_robots',
         'button_text',
         'about_title',
+        'why_choose_json',
+        'consultant_json',
+        'questions_json',
         'is_active',
         'sort_order'
     ];
 
     protected $casts = [
         'is_active' => 'boolean',
+        'why_choose_json' => 'array',
+        'consultant_json' => 'array',
+        'questions_json' => 'array',
     ];
 
     protected function canonicalUrl(): Attribute

@@ -1,6 +1,6 @@
-/* FirstStep Section Styles */
-.firststep-section {
-    height: 406px;
+/* Service CTA Section Styles for Service Pages */
+.service-cta-section {
+    height: 460px;
     background: #FFFFFF;
     display: flex;
     align-items: center;
@@ -9,14 +9,14 @@
     margin: 0;
 }
 
-.firststep-container {
+.service-cta-container {
     width: 100%;
     max-width: 1440px;
     margin: 0 auto;
     padding: 0 45px;
 }
 
-.firststep-background {
+.service-cta-background {
     width: 1320px;
     height: 346px;
     background-image: url('/images/step-background.png');
@@ -27,19 +27,19 @@
     display: flex;
     align-items: center;
     justify-content: flex-start;
-    padding-left: 80px;
+    padding-left: 50px;
     margin: 0 auto;
     position: relative;
 }
 
-.firststep-content {
+.service-cta-content {
     display: flex;
     flex-direction: column;
     gap: 24px;
     max-width: 539px;
 }
 
-.firststep-title {
+.service-cta-title {
     width: 539px;
     height: 96px;
     font-family: 'Cal Sans';
@@ -53,7 +53,7 @@
     align-items: center;
 }
 
-.firststep-description {
+.service-cta-description {
     width: 539px;
     height: 54px;
     font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -67,7 +67,7 @@
     align-items: center;
 }
 
-.firststep-btn {
+.service-cta-btn {
     display: flex;
     flex-direction: row;
     justify-content: center;
@@ -87,24 +87,24 @@
     box-sizing: border-box;
 }
 
-.firststep-btn:hover {
+.service-cta-btn:hover {
     background: var(--primary, #E62D5B);
     color: #FFFFFF;
     transform: translateY(-2px);
     box-shadow: 0 8px 25px rgba(230, 45, 91, 0.3);
 }
 
-.firststep-btn:active {
+.service-cta-btn:active {
     transform: translateY(0);
 }
 
 /* Responsive Design */
 @media (max-width: 1400px) {
-    .firststep-container {
+    .service-cta-container {
         padding: 0 30px;
     }
 
-    .firststep-background {
+    .service-cta-background {
         width: 100%;
         max-width: 1200px;
         padding-left: 60px;
@@ -112,21 +112,21 @@
 }
 
 @media (max-width: 1200px) {
-    .firststep-background {
+    .service-cta-background {
         width: 100%;
         max-width: 1000px;
         height: 320px;
         padding-left: 50px;
     }
 
-    .firststep-title {
+    .service-cta-title {
         width: 100%;
         max-width: 480px;
         height: auto;
         font-size: 36px;
     }
 
-    .firststep-description {
+    .service-cta-description {
         width: 100%;
         max-width: 480px;
         height: auto;
@@ -135,16 +135,16 @@
 }
 
 @media (max-width: 768px) {
-    .firststep-section {
+    .service-cta-section {
         height: auto;
         padding: 40px 0;
     }
 
-    .firststep-container {
+    .service-cta-container {
         padding: 0 20px;
     }
 
-    .firststep-background {
+    .service-cta-background {
         width: 100%;
         height: 280px;
         padding: 40px 30px;
@@ -152,13 +152,13 @@
         text-align: center;
     }
 
-    .firststep-content {
+    .service-cta-content {
         align-items: center;
         text-align: center;
         max-width: 100%;
     }
 
-    .firststep-title {
+    .service-cta-title {
         width: 100%;
         max-width: 350px;
         height: auto;
@@ -166,7 +166,7 @@
         line-height: 130%;
     }
 
-    .firststep-description {
+    .service-cta-description {
         width: 100%;
         max-width: 350px;
         height: auto;
@@ -174,7 +174,7 @@
         line-height: 140%;
     }
 
-    .firststep-btn {
+    .service-cta-btn {
         width: 180px;
         height: 50px;
         padding: 14px 24px;
@@ -183,32 +183,32 @@
 }
 
 @media (max-width: 480px) {
-    .firststep-container {
+    .service-cta-container {
         padding: 0 15px;
     }
 
-    .firststep-background {
+    .service-cta-background {
         height: 250px;
         padding: 30px 20px;
         border-radius: 8px;
     }
 
-    .firststep-content {
+    .service-cta-content {
         gap: 20px;
     }
 
-    .firststep-title {
+    .service-cta-title {
         max-width: 280px;
         font-size: 24px;
         line-height: 125%;
     }
 
-    .firststep-description {
+    .service-cta-description {
         max-width: 280px;
         font-size: 14px;
     }
 
-    .firststep-btn {
+    .service-cta-btn {
         width: 160px;
         height: 46px;
         padding: 12px 20px;
