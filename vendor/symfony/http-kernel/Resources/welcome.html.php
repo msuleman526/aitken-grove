@@ -178,7 +178,7 @@ SVG;
         .info .next-step svg { display: none; }
         .waves { color: #3a3a52; position: absolute; bottom: -5px; left: 0; right: 0; width: 100% }
         main article { padding: 30px 0 0; }
-        main h2 { align-items: center; display: flex; font-size: 18px; font-weight: 600; margin: 0; }
+        main h2 { align-items: center; display: flex; font-size: 18px; font-weight: 400;; margin: 0; }
         main h2 span { display: inline-flex; }
         main h2 svg { height: 28px; width: 28px; margin-right: 10px; }
         main article section + section { margin-top: 45px; }

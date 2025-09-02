@@ -8,13 +8,15 @@
 /* ① Register Cal Sans (served locally from /public) */
 @font-face {
     font-family: 'Cal Sans';
-    src: url('/fonts/CalSans-Regular.ttf') format('truetype');
-    font-weight: 600;
+    src: url('/fonts/CalSans-SemiBold.woff2') format('woff2'),
+        url('/fonts/CalSans-SemiBold.woff') format('woff'),
+        url('/fonts/CalSans-SemiBold.ttf') format('truetype');
+    font-weight: 400;
     font-style: normal;
     font-display: swap;
 }
 
 @theme {
-    --font-sans: 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
+    --font-sans: 'Cal Sans', 'Instrument Sans', ui-sans-serif, system-ui, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji',
         'Segoe UI Symbol', 'Noto Color Emoji';
 }

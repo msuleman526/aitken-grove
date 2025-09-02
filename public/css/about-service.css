@@ -48,9 +48,10 @@
     min-height: 162px;
     margin: 0 auto;
     padding: 20px;
-    font-family: 'Cal Sans', sans-serif;
+    font-family: 'Cal Sans';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
+    ;
     font-size: 36px;
     line-height: 150%;
     text-align: center;

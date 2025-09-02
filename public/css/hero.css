@@ -1,12 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&display=swap');
 
-/* Cal Sans fallback - using system fonts as backup */
-@font-face {
-    font-family: 'Cal Sans';
-    src: local('Avenir Next'), local('Avenir'), local('Segoe UI'), local('Roboto');
-}
-
 /* Hero Section Styles */
 .hero-section {
     border-bottom: 1px solid white;
@@ -76,7 +70,8 @@
 .hero-title {
     font-family: 'Cal Sans';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
+    ;
     font-size: 60px;
     line-height: 72px;
     color: #000000;
@@ -195,7 +190,8 @@
     padding: 18px 36px;
     border-radius: 100px;
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
+    ;
     font-size: 16px;
     text-decoration: none;
     transition: all 0.3s ease;
@@ -228,7 +224,8 @@
 
 .contact-hours {
     font-family: 'Montserrat', sans-serif;
-    font-weight: 600;
+    font-weight: 400;
+    ;
     font-size: 14px;
     color: #000000;
 }

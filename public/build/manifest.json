@@ -1,0 +1,20 @@
+{
+  "public/fonts/CalSans-Regular.ttf": {
+    "file": "assets/CalSans-Regular-C_8aWXSs.ttf",
+    "src": "public/fonts/CalSans-Regular.ttf"
+  },
+  "resources/css/app.css": {
+    "file": "assets/app-DXwAMAlV.css",
+    "src": "resources/css/app.css",
+    "isEntry": true,
+    "names": [
+      "app.css"
+    ]
+  },
+  "resources/js/app.js": {
+    "file": "assets/app-C0G0cght.js",
+    "name": "app",
+    "src": "resources/js/app.js",
+    "isEntry": true
+  }
+}

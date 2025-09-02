@@ -34,7 +34,8 @@
 .specialists-title {
     font-family: 'Cal Sans';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
+    ;
     font-size: 40px;
     line-height: 120%;
     margin: 0;
@@ -207,7 +208,8 @@
 .specialist-name {
     font-family: 'Cal Sans';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;
+    ;
     font-size: 18px;
     line-height: 150%;
     text-align: center;

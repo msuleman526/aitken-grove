@@ -103,7 +103,7 @@
 .testimonials-title {
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;;
     font-size: 40px;
     line-height: 120%;
     margin: 0;
@@ -210,7 +210,7 @@
 .testimonials-name {
     font-family: 'Inter';
     font-style: normal;
-    font-weight: 600;
+    font-weight: 400;;
     font-size: 16px;
     line-height: 150%;
     color: #000000;

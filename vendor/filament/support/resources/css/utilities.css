@@ -460,19 +460,15 @@
     --prose-strong-color: var(--color-gray-950);
     --prose-link-color: var(--color-gray-950);
     --prose-code-color: var(--color-gray-950);
-    --prose-marker-color: color-mix(
-        in oklab,
-        var(--color-gray-700) 25%,
-        transparent
-    );
+    --prose-marker-color: color-mix(in oklab,
+            var(--color-gray-700) 25%,
+            transparent);
     --prose-link-underline-color: var(--color-primary-400);
     --prose-th-borders: var(--color-gray-300);
     --prose-td-borders: var(--color-gray-200);
-    --prose-hr-color: color-mix(
-        in oklab,
-        var(--color-gray-950) 5%,
-        transparent
-    );
+    --prose-hr-color: color-mix(in oklab,
+            var(--color-gray-950) 5%,
+            transparent);
     --prose-blockquote-border-color: var(--color-gray-300);
 
     @variant dark {
@@ -481,19 +477,15 @@
         --prose-strong-color: var(--color-white);
         --prose-link-color: var(--color-white);
         --prose-code-color: var(--color-white);
-        --prose-marker-color: color-mix(
-            in oklab,
-            var(--color-gray-300) 35%,
-            transparent
-        );
+        --prose-marker-color: color-mix(in oklab,
+                var(--color-gray-300) 35%,
+                transparent);
         --prose-link-underline-color: var(--color-sky-400);
         --prose-th-borders: var(--color-gray-600);
         --prose-td-borders: var(--color-gray-700);
-        --prose-hr-color: color-mix(
-            in oklab,
-            var(--color-white) 10%,
-            transparent
-        );
+        --prose-hr-color: color-mix(in oklab,
+                var(--color-white) 10%,
+                transparent);
         --prose-blockquote-border-color: var(--color-gray-600);
     }
 
@@ -501,8 +493,7 @@
     font-size: var(--text-sm);
     line-height: 1.5;
 
-    *:where(:not(.fi-not-prose, .fi-not-prose *))
-        + *:where(:not(.fi-not-prose, .fi-not-prose *)) {
+    *:where(:not(.fi-not-prose, .fi-not-prose *))+*:where(:not(.fi-not-prose, .fi-not-prose *)) {
         margin-top: calc(var(--spacing) * 4);
     }
 
@@ -540,6 +531,7 @@
 
     :is(h2, h3, h4, h5, h6):where(:not(.fi-not-prose, .fi-not-prose *)) {
         scroll-margin-top: calc(var(--spacing) * 32);
+
         @variant lg {
             scroll-margin-top: calc(var(--spacing) * 18);
         }
@@ -560,8 +552,8 @@
         padding-left: calc(var(--spacing) * 3);
     }
 
-    ol li + li:where(:not(.fi-not-prose, .fi-not-prose *)),
-    ul li + li:where(:not(.fi-not-prose, .fi-not-prose *)) {
+    ol li+li:where(:not(.fi-not-prose, .fi-not-prose *)),
+    ul li+li:where(:not(.fi-not-prose, .fi-not-prose *)) {
         margin-top: calc(var(--spacing) * 4);
     }
 
@@ -570,15 +562,14 @@
         color: var(--prose-marker-color);
     }
 
-    a:not(:where(:is(h2, h3, h4, h5, h6) *)):where(
-            :not(.fi-not-prose, .fi-not-prose *)
-        ) {
+    a:not(:where(:is(h2, h3, h4, h5, h6) *)):where( :not(.fi-not-prose, .fi-not-prose *)) {
         color: var(--prose-link-color);
         font-weight: var(--font-weight-semibold);
         text-decoration: underline;
         text-underline-offset: 3px;
         text-decoration-color: var(--prose-link-underline-color);
         text-decoration-thickness: 1px;
+
         & code {
             font-weight: var(--font-weight-semibold);
         }
@@ -600,8 +591,7 @@
         color: var(--prose-code-color);
     }
 
-    :where(h2, h3, h4, h5, h6)
-        code:where(:not(.fi-not-prose, .fi-not-prose *)) {
+    :where(h2, h3, h4, h5, h6) code:where(:not(.fi-not-prose, .fi-not-prose *)) {
         font-weight: var(--font-weight-semibold);
     }
 
@@ -616,7 +606,7 @@
         margin-bottom: calc(var(--spacing) * 10);
     }
 
-    pre code * + *:where(:not(.fi-not-prose, .fi-not-prose *)) {
+    pre code *+*:where(:not(.fi-not-prose, .fi-not-prose *)) {
         margin-top: 0;
     }
 
@@ -648,7 +638,8 @@
 
     thead th:where(:not(.fi-not-prose, .fi-not-prose *)) {
         color: var(--prose-heading-color);
-        font-weight: 600;
+        font-weight: 400;
+        ;
         vertical-align: bottom;
         padding-inline-end: 0.6em;
         padding-bottom: 0.8em;
@@ -715,7 +706,8 @@
     hr:where(:not(.fi-not-prose, .fi-not-prose *)) {
         border-color: var(--prose-hr-color);
         margin-block: --spacing(8);
-        & + h2 {
+
+        &+h2 {
             margin-top: --spacing(8);
         }
     }

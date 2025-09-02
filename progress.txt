@@ -465,3 +465,58 @@ Timestamp: 2025-09-02 17:00:00
 
 Timestamp: 2025-09-02 17:30:00
 
+[2025-09-02 - Cal Sans Font Issue Fixed] Successfully resolved Cal Sans font not working on home page:
+
+**ISSUE IDENTIFIED**: Cal Sans font was working on service pages but not on home page due to conflicting @font-face definitions and CSS loading order.
+
+**ROOT CAUSE**: 
+- Home page loaded hero.css LAST in CSS cascade with problematic fallback definition:
+```css
+@font-face {
+    font-family: 'Cal Sans';
+    src: local('Avenir Next'), local('Avenir'), local('Segoe UI'), local('Roboto');
+}
+```
+- This overrode the CDN font definition, causing fallback to system fonts
+- Service pages loaded additional CSS files AFTER hero.css with proper (but empty) @font-face definitions
+- Multiple conflicting @font-face definitions across different CSS files
+- Unreliable CDN link: `https://fonts.cdnfonts.com/css/cal-sans`
+
+**SOLUTION IMPLEMENTED**:
+
+1. **Created Dedicated Font File**: `/public/css/fonts.css` with proper @font-face definitions using local font files:
+   * CalSans-Regular.ttf for font-weight: 400
+   * CalSans-SemiBold.woff2, .woff, .ttf for font-weight: 600
+   * Added font-display: swap for performance
+
+2. **Updated Layout File**: In `/resources/views/layouts/app.blade.php`:
+   * Removed unreliable CDN link: `fonts.cdnfonts.com/css/cal-sans`
+   * Added local font CSS: `{{ asset('css/fonts.css') }}`
+   * Maintains proper loading order before other CSS files
+
+3. **Fixed Hero CSS**: In `/public/css/hero.css`:
+   * Removed problematic system font fallback @font-face definition
+   * Eliminated CSS conflict that was overriding proper font loading
+
+4. **Cleaned Up Conflicting Definitions**: Removed empty/duplicate @font-face rules from:
+   * `/public/css/service-cta-section.css`
+   * `/public/css/components/firststep-section.css`
+   * Prevents CSS conflicts and loading issues
+
+**TECHNICAL DETAILS**:
+- Font files located: `/public/fonts/CalSans-Regular.ttf`, `/public/fonts/CalSans-SemiBold.*`
+- Loading order: fonts.css → hero.css → other CSS files
+- Proper fallbacks: system fonts only if local files fail to load
+- No breaking changes to existing functionality
+
+**RESULT**: Cal Sans font now displays correctly on both home page and service pages. All titles using `font-family: 'Cal Sans'` will render with the actual Cal Sans typeface instead of system font fallbacks.
+
+**FILES MODIFIED**:
+- Created: `/public/css/fonts.css`
+- Modified: `/resources/views/layouts/app.blade.php`
+- Modified: `/public/css/hero.css`
+- Modified: `/public/css/service-cta-section.css`
+- Modified: `/public/css/components/firststep-section.css`
+
+Timestamp: 2025-09-02 18:00:00
+

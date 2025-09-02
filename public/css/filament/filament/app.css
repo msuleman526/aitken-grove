@@ -20129,7 +20129,7 @@
         padding-inline-end: .6em;
         padding-bottom: .8em;
         padding-inline-start: .6em;
-        font-weight: 600
+        font-weight: 400;
     }
 
     .fi-prose thead th:first-child:where(:not(.fi-not-prose, .fi-not-prose *)) {
