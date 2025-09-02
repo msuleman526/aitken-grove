@@ -71,8 +71,8 @@
         
         /* Header Styles */
         .header-container {
-            position: fixed;
-            top: 30px;
+            position: absolute;
+            top: 20px;
             left: 50%;
             transform: translateX(-50%);
             max-width: 1320px;
@@ -186,7 +186,7 @@
             width: 196px;
             height: 56px;
             font-family: 'Montserrat', sans-serif;
-            font-weight: 500;
+            font-weight: 400;
             font-size: 14px;
             line-height: 150%;
             cursor: pointer;

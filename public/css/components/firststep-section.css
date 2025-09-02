@@ -1,6 +1,6 @@
 /* FirstStep Section Styles */
 .firststep-section {
-    height: 406px;
+    height: 460px;
     background: #FFFFFF;
     display: flex;
     align-items: center;
@@ -57,7 +57,7 @@
 .firststep-description {
     width: 539px;
     height: 54px;
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 18px;
@@ -80,8 +80,9 @@
     background: #FFFFFF;
     border-radius: 100px;
     color: var(--primary, #E62D5B);
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
-    font-weight: 500;
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
     font-size: 14px;
     text-decoration: none;
     transition: all 0.3s ease;

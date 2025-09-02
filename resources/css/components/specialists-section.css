@@ -1,6 +1,6 @@
 /* Specialists Section - Meet Our Specialists */
 .specialists-section {
-    height: 681px;
+    height: 704px;
     background: #FFFFFF;
     width: 100%;
     display: flex;
@@ -208,7 +208,7 @@
 .specialist-name {
     font-family: 'Cal Sans';
     font-style: normal;
-    font-weight: 500;
+    font-weight: 400;
     font-size: 18px;
     line-height: 150%;
     text-align: center;

@@ -27,17 +27,16 @@
 
 .hero-content {
     max-width: 1440px;
-    margin: 60px auto 0 auto;
+    margin: 0 auto;
     position: relative;
     z-index: 10;
-    padding: 0 20px 60px;
-    padding-top: 0;
+    padding: 95px 20px 60px;
     width: 100%;
 }
 
 .hero-logo {
     text-align: center;
-    margin-top: 100px;
+    margin-top: 40px;
     padding-top: 20px;
 }
 
@@ -90,7 +89,7 @@
 }
 
 .hero-description {
-    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -278,7 +277,7 @@
     }
 
     .hero-logo {
-        margin-top: 70px !important;
+        margin-top: 20px !important;
     }
 
     .hero-logo img {

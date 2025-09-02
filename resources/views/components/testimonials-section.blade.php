@@ -101,7 +101,7 @@
 }
 
 .testimonials-title {
-    font-family: 'Inter';
+    font-family: 'Cal Sans';
     font-style: normal;
     font-weight: 400;;
     font-size: 40px;
@@ -192,7 +192,7 @@
 }
 
 .testimonials-comment {
-    font-family: 'Inter';
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-style: normal;
     font-weight: 400;
     font-size: 16px;
@@ -208,7 +208,7 @@
 }
 
 .testimonials-name {
-    font-family: 'Inter';
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
     font-style: normal;
     font-weight: 400;;
     font-size: 16px;
@@ -218,7 +218,7 @@
 }
 
 .testimonials-role {
-    font-family: 'Inter';
+    font-family: 'Cal Sans';
     font-style: normal;
     font-weight: 400;
     font-size: 14px;

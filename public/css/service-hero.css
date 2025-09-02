@@ -60,7 +60,7 @@
 .service-hero-description {
     width: 600px;
     height: 90px;
-    font-family: 'Inter', sans-serif;
+    font-family: 'Inter';
     font-style: normal;
     font-weight: 400;
     font-size: 20px;
@@ -154,7 +154,7 @@
 
 /* Inter Font Loading */
 @font-face {
-    font-family: 'Inter';
+    font-family: 'Cal Sans';
     src: url('/fonts/Inter-Regular.woff2') format('woff2'),
         url('/fonts/Inter-Regular.woff') format('woff');
     font-weight: 400;
