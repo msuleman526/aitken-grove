@@ -15,11 +15,10 @@
                         <a href="{{ route('services.index') }}" class="nav-link nav-dropdown">Services</a>
                         <div class="dropdown-menu">
                             <a href="{{ route('services.show', 'family-health-care') }}" class="dropdown-item">Family Health Care</a>
-                            <a href="{{ route('services.show', 'pediatric-care') }}" class="dropdown-item">Pediatric Care</a>
-                            <a href="{{ route('services.show', 'geriatric-medicine') }}" class="dropdown-item">Geriatric Medicine</a>
-                            <a href="{{ route('services.show', 'womens-health') }}" class="dropdown-item">Women's Health</a>
-                            <a href="{{ route('services.show', 'mens-health') }}" class="dropdown-item">Men's Health</a>
-                            <a href="{{ route('services.index') }}" class="dropdown-item"><strong>View All Services</strong></a>
+                            <a href="{{ route('services.show', 'aesthetics-cosmetics') }}" class="dropdown-item">Aesthetics /Cosmetics</a>
+                            <a href="{{ route('services.show', 'circumcision-clinic') }}" class="dropdown-item">Circumcision Clinic</a>
+                            <a href="{{ route('services.show', 'skin-cancer-care') }}" class="dropdown-item">Skin Cancer Care</a>
+                            <a href="{{ route('services.show', 'immunisation') }}" class="dropdown-item">Immunisation</a>
                         </div>
                     </li>
                     <li class="nav-item">
