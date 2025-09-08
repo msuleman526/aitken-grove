@@ -91,7 +91,7 @@
             padding: 0 40px;
             backdrop-filter: blur(10px);
             -webkit-backdrop-filter: blur(10px);
-            border: 1px solid rgba(255, 255, 255, 0.4);
+            border: 1px solid #DDDDDD
         }
         
         .logo {

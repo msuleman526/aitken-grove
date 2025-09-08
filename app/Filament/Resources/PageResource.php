@@ -112,10 +112,28 @@ class PageResource extends Resource
                 ->schema([
                     TextInput::make('meta_title')
                         ->label('Meta Title')
+                        ->helperText('Recommended: 50-60 characters')
                         ->maxLength(60),
                     Textarea::make('meta_description')
                         ->label('Meta Description')
+                        ->helperText('Recommended: 120-155 characters')
                         ->maxLength(155),
+                    TextInput::make('canonical_url')
+                        ->label('Canonical URL')
+                        ->helperText('Leave empty to use current page URL')
+                        ->url()
+                        ->maxLength(255),
+                    Select::make('meta_robots')
+                        ->label('Meta Robots')
+                        ->helperText('Controls how search engines crawl and index this page')
+                        ->options([
+                            'index, follow' => 'Index, Follow (Default)',
+                            'index, nofollow' => 'Index, No Follow',
+                            'noindex, follow' => 'No Index, Follow',
+                            'noindex, nofollow' => 'No Index, No Follow',
+                        ])
+                        ->default('index, follow')
+                        ->required(),
                     DateTimePicker::make('published_at')
                         ->label('Publish Date'),
                 ]),

@@ -21,6 +21,8 @@ class Page extends Model
         'contact_email',
         'meta_title',
         'meta_description',
+        'canonical_url',
+        'meta_robots',
         'open_graph_json',
         'published_at'
     ];

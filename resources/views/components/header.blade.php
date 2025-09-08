@@ -19,6 +19,7 @@
                             <a href="{{ route('services.show', 'circumcision-clinic') }}" class="dropdown-item">Circumcision Clinic</a>
                             <a href="{{ route('services.show', 'skin-cancer-care') }}" class="dropdown-item">Skin Cancer Care</a>
                             <a href="{{ route('services.show', 'immunisation') }}" class="dropdown-item">Immunisation</a>
+                            <a href="{{ route('services.index') }}" class="dropdown-item" style="color: #E62D5B">View All Services</a>
                         </div>
                     </li>
                     <li class="nav-item">

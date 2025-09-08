@@ -67,20 +67,20 @@
                         <h3 class="footer-menu-title">Services</h3>
                         @php
                             $services = [
-                                ['url' => '/services/family-health', 'name' => 'Family Health Care'],
-                                ['url' => '/services/aesthetics-cosmetics', 'name' => 'Aesthetics / Cosmetics'],
-                                ['url' => '/services/circumcision-clinic', 'name' => 'Circumcision Clinic'],
-                                ['url' => '/services/skin-cancer-care', 'name' => 'Skin Cancer Care'],
-                                ['url' => '/services/immunisation', 'name' => 'Immunisation'],
-                                ['url' => '/services/travel-advice', 'name' => 'Travel Advice'],
-                                ['url' => '/services/weight-loss-clinic', 'name' => 'Weight Loss Clinic'],
-                                ['url' => '/services/medical-cannabis', 'name' => 'Medical Cannabis'],
-                                ['url' => '/services/pregnancy-care', 'name' => 'Pregnancy Care'],
-                                ['url' => '/services/mens-health', 'name' => 'Men\'s Health'],
-                                ['url' => '/services/womens-health', 'name' => 'Women\'s Health'],
-                                ['url' => '/services/iron-infusion', 'name' => 'Iron Infusion'],
-                                ['url' => '/services/mental-health', 'name' => 'Mental Health'],
-                                ['url' => '/services/work-cover-tac', 'name' => 'Work Cover & TAC']
+                                ['url' => '/service/family-health-care', 'name' => 'Family Health Care'],
+                                ['url' => '/service/aesthetics-cosmetics', 'name' => 'Aesthetics / Cosmetics'],
+                                ['url' => '/service/circumcision-clinic', 'name' => 'Circumcision Clinic'],
+                                ['url' => '/service/skin-cancer-care', 'name' => 'Skin Cancer Care'],
+                                ['url' => '/service/immunisation', 'name' => 'Immunisation'],
+                                ['url' => '/service/travel-advice', 'name' => 'Travel Advice'],
+                                ['url' => '/service/weight-loss-clinic', 'name' => 'Weight Loss Clinic'],
+                                ['url' => '/service/medical-cannabis', 'name' => 'Medical Cannabis'],
+                                ['url' => '/service/pregnancy-care', 'name' => 'Pregnancy Care'],
+                                ['url' => '/service/mens-health', 'name' => 'Men\'s Health'],
+                                ['url' => '/service/womens-health', 'name' => 'Women\'s Health'],
+                                ['url' => '/service/iron-infusion', 'name' => 'Iron Infusion'],
+                                ['url' => '/service/mental-health', 'name' => 'Mental Health'],
+                                ['url' => '/service/work-cover-tac', 'name' => 'Work Cover & TAC']
                             ];
                             $serviceCount = count($services);
                             $shouldSplit = $serviceCount > 5;
