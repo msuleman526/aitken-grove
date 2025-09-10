@@ -198,9 +198,194 @@
         }
         
         .cta-button:hover {
-            background: #d02554;
+            background: #60C6C8;
             transform: translateY(-2px);
             box-shadow: 0 4px 12px rgba(230, 45, 91, 0.3);
+        }
+        
+        /* Mobile Menu Toggle Button */
+        .mobile-menu-toggle {
+            display: none;
+            background: white;
+            border: none;
+            border-radius: 8px;
+            width: 48px;
+            height: 48px;
+            cursor: pointer;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-menu-toggle:hover {
+            transform: translateY(-1px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .hamburger-icon {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 24px;
+            height: 18px;
+            margin: auto;
+        }
+        
+        .hamburger-icon span {
+            display: block;
+            width: 20px;
+            height: 2px;
+            background-color: var(--primary-color);
+            transition: all 0.3s ease;
+            transform-origin: center;
+        }
+        
+        .hamburger-icon span:not(:last-child) {
+            margin-bottom: 4px;
+        }
+        
+        /* Mobile Drawer */
+        .mobile-drawer {
+            position: fixed;
+            top: -20px;
+            right: -400px;
+            width: 320px;
+            height: 100vh;
+            background: white;
+            box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
+            transition: right 0.3s ease;
+            z-index: 10000;
+            overflow-y: auto;
+        }
+        
+        .mobile-drawer.active {
+            right: -20px;
+        }
+        
+        .mobile-drawer-content {
+            padding: 24px;
+            display: flex;
+            flex-direction: column;
+            height: 100%;
+        }
+        
+        .mobile-drawer-close {
+            align-self: flex-end;
+            background: none;
+            border: none;
+            width: 32px;
+            height: 32px;
+            cursor: pointer;
+            color: var(--accent-color);
+            margin-bottom: 20px;
+        }
+        
+        .mobile-logo-wrapper {
+            text-align: center;
+            margin-bottom: 32px;
+        }
+        
+        .mobile-logo {
+            width: 240px;
+            height: 40px;
+        }
+        
+        .mobile-navigation {
+            flex: 1;
+        }
+        
+        .mobile-nav-menu {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .mobile-nav-item {
+            margin-bottom: 8px;
+        }
+        
+        .mobile-nav-link {
+            display: block;
+            padding: 16px 0;
+            color: var(--accent-color);
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 18px;
+            line-height: 150%;
+            border-bottom: 1px solid #f0f0f0;
+            transition: color 0.3s ease;
+        }
+        
+        .mobile-nav-link:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-service-submenu .mobile-nav-sublink {
+            display: block;
+            padding: 12px 0 12px 24px;
+            color: #666;
+            text-decoration: none;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 400;
+            font-size: 16px;
+            line-height: 150%;
+            transition: color 0.3s ease;
+        }
+        
+        .mobile-service-submenu .mobile-nav-sublink:hover {
+            color: var(--primary-color);
+        }
+        
+        .mobile-cta-button {
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            border-radius: 100px;
+            width: 100%;
+            height: 56px;
+            font-family: 'Montserrat', sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            text-decoration: none;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-top: 24px;
+            transition: all 0.3s ease;
+        }
+        
+        .mobile-cta-button:hover {
+            background: #60C6C8;
+        }
+        
+        /* Mobile Overlay */
+        .mobile-overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 9999;
+        }
+        
+        .mobile-overlay.active {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        /* Hide mobile drawer on desktop - greater than 940px */
+        @media (min-width: 941px) {
+            .mobile-drawer {
+                display: none !important;
+            }
+            
+            .mobile-overlay {
+                display: none !important;
+            }
         }
         
         /* Mobile Responsive */
@@ -221,6 +406,20 @@
             }
         }
         
+        @media (max-width: 940px) {
+            .desktop-nav {
+                display: none;
+            }
+            
+            .desktop-cta {
+                display: none;
+            }
+            
+            .mobile-menu-toggle {
+                display: block;
+            }
+        }
+        
         @media (max-width: 768px) {
             .header-container {
                 top: 16px;
@@ -232,28 +431,9 @@
                 height: 80px;
             }
             
-            .nav-menu {
-                display: none;
+            .mobile-drawer {
+                width: 280px;
             }
-            
-            .mobile-menu-toggle {
-                display: block;
-                background: none;
-                border: none;
-                font-size: 24px;
-                color: var(--accent-color);
-                cursor: pointer;
-            }
-            
-            .cta-button {
-                width: 140px;
-                height: 44px;
-                font-size: 12px;
-            }
-        }
-        
-        .mobile-menu-toggle {
-            display: none;
         }
     </style>
     
@@ -261,6 +441,46 @@
 </head>
 <body>
     @yield('content')
+    
+    <!-- Mobile Menu JavaScript -->
+    <script>
+        function toggleMobileMenu() {
+            const drawer = document.getElementById('mobileDrawer');
+            const overlay = document.getElementById('mobileOverlay');
+            
+            if (drawer && overlay) {
+                const isActive = drawer.classList.contains('active');
+                
+                if (isActive) {
+                    drawer.classList.remove('active');
+                    overlay.classList.remove('active');
+                    document.body.style.overflow = 'auto';
+                } else {
+                    drawer.classList.add('active');
+                    overlay.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                }
+            }
+        }
+        
+        // Close menu when clicking outside or on overlay
+        document.addEventListener('DOMContentLoaded', function() {
+            const overlay = document.getElementById('mobileOverlay');
+            if (overlay) {
+                overlay.addEventListener('click', toggleMobileMenu);
+            }
+            
+            // Close menu on escape key
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'Escape') {
+                    const drawer = document.getElementById('mobileDrawer');
+                    if (drawer && drawer.classList.contains('active')) {
+                        toggleMobileMenu();
+                    }
+                }
+            });
+        });
+    </script>
     
     @stack('scripts')
 </body>

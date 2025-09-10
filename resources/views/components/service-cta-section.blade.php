@@ -10,7 +10,7 @@
                 <p class="service-cta-description">
                     {{ $service->consultant_json['description'] ?? 'Take the first step toward better family health. Our dedicated doctors are here to provide personalized care and guidance.' }}
                 </p>
-                <a href="#" class="service-cta-btn">Book a Consultant</a>
+                <a href="/contact" class="service-cta-btn">Book a Consultant</a>
             </div>
         </div>
     </div>

@@ -59,6 +59,11 @@ class SectionResource extends Resource
                             'pricing' => 'Pricing Section',
                             'faq' => 'FAQ Section',
                             'cta_banner' => 'CTA Banner',
+                            'about_hero' => 'About Hero Section',
+                            'about_counts' => 'About Counts Section',
+                            'heart' => 'Heart Section',
+                            'gallery' => 'Gallery Section',
+                            'journey' => 'Journey Section',
                         ])
                         ->required()
                         ->reactive(),
@@ -292,7 +297,7 @@ class SectionResource extends Resource
                         ->label('Button URL')
                         ->required()
                         ->url()
-                        ->placeholder('#')
+                        ->placeholder('/contact')
                         ->helperText('URL for the button action'),
                 ])
                 ->visible(fn ($get) => $get('key') === 'firststep'),
@@ -403,6 +408,123 @@ class SectionResource extends Resource
                         ->placeholder('https://example.com/signup'),
                 ])
                 ->visible(fn ($get) => $get('key') === 'cta_banner'),
+
+            FormSection::make('About Counts Section Content')
+                ->schema([
+                    Repeater::make('content_json.counts')
+                        ->label('Count Items')
+                        ->schema([
+                            TextInput::make('number')
+                                ->label('Number/Statistic')
+                                ->required()
+                                ->placeholder('15+')
+                                ->helperText('Number or statistic display - Cal Sans font, 600 weight, 60px, white color'),
+                            TextInput::make('text')
+                                ->label('Description Text')
+                                ->required()
+                                ->placeholder('Years of Care')
+                                ->helperText('Description text - Inter font, 400 weight, 20px, white color'),
+                        ])
+                        ->defaultItems(4)
+                        ->maxItems(4)
+                        ->minItems(1)
+                        ->addActionLabel('Add Count Item')
+                        ->helperText('4 transparent boxes (312x102px) with gradient background on 166px height section'),
+                ])
+                ->visible(fn ($get) => $get('key') === 'about_counts'),
+
+            FormSection::make('Heart Section Content')
+                ->schema([
+                    TextInput::make('content_json.title')
+                        ->label('Title')
+                        ->maxLength(255)
+                        ->placeholder('The Heart Behind<br>What We Do')
+                        ->helperText('Main title with "The Heart Behind" (black) and "What We Do" (primary #E62D5B). Use <br> for line breaks.'),
+                    Textarea::make('content_json.description')
+                        ->label('Description')
+                        ->rows(4)
+                        ->placeholder('At Aitken Grove Medical Center, our mission is simple — to provide compassionate, reliable, and patient-centered healthcare that empowers families to live healthier, happier lives.')
+                        ->helperText('Description with Inter font, 18px, black color'),
+                    Repeater::make('content_json.points')
+                        ->label('Heart Points')
+                        ->schema([
+                            TextInput::make('text')
+                                ->label('Point Text')
+                                ->required()
+                                ->placeholder('We listen, we care, and we treat every patient with dignity and kindness.')
+                                ->maxLength(500),
+                        ])
+                        ->defaultItems(4)
+                        ->maxItems(10)
+                        ->helperText('Points with checkmark icons, Inter font 16px weight')
+                        ->addActionLabel('Add Heart Point'),
+                    FileUpload::make('content_json.image')
+                        ->label('Heart Image')
+                        ->disk('public')
+                        ->directory('heart-images')
+                        ->image()
+                        ->imageResizeMode('contain')
+                        ->imageCropAspectRatio('636:531')
+                        ->maxSize(20480)
+                        ->helperText('Recommended size: 636x531px. Max file size: 20MB')
+                        ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp']),
+                ])
+                ->visible(fn ($get) => $get('key') === 'heart'),
+
+            FormSection::make('Gallery Section Content')
+                ->schema([
+                    Repeater::make('content_json.images')
+                        ->label('Gallery Images')
+                        ->schema([
+                            FileUpload::make('path')
+                                ->label('Gallery Image')
+                                ->disk('public')
+                                ->directory('gallery-images')
+                                ->image()
+                                ->imageResizeMode('cover')
+                                ->imageCropAspectRatio('300:200')
+                                ->maxSize(20480)
+                                ->required()
+                                ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp']),
+                            TextInput::make('alt')
+                                ->label('Alt Text')
+                                ->placeholder('Gallery Image Description')
+                                ->maxLength(255)
+                                ->helperText('Image description for accessibility'),
+                        ])
+                        ->defaultItems(0)
+                        ->maxItems(50)
+                        ->minItems(0)
+                        ->orderColumn('sort')
+                        ->helperText('Upload gallery images (300x200px recommended). Images will scroll automatically with live animations. If no images are uploaded, default images from public/images/gallery/ will be used.')
+                        ->addActionLabel('Add Gallery Image')
+                        ->collapsed(),
+                ])
+                ->visible(fn ($get) => $get('key') === 'gallery'),
+
+            FormSection::make('Journey Section Content')
+                ->schema([
+                    Textarea::make('content_json.title')
+                        ->label('Title')
+                        ->rows(3)
+                        ->placeholder('A Journey of Compassion, Trust, and Dedication to Better Health for Every Generation')
+                        ->helperText('Main title with HTML support for colored text parts. Use <span class="title-highlight"> for primary color text.'),
+                    Textarea::make('content_json.description')
+                        ->label('Description')
+                        ->rows(6)
+                        ->placeholder('From the very beginning, our vision has been simple yet powerful — to create a place where people feel truly cared for...')
+                        ->helperText('Full description text with Inter font, 18px, black color. Supports HTML paragraphs.'),
+                    FileUpload::make('content_json.image')
+                        ->label('Journey Image')
+                        ->disk('public')
+                        ->directory('journey-images')
+                        ->image()
+                        ->imageResizeMode('contain')
+                        ->maxSize(20480)
+                        ->helperText('Journey image for left column. If not uploaded, will use default heart2.png')
+                        ->acceptedFileTypes(['image/jpeg', 'image/png', 'image/webp']),
+                ])
+                ->visible(fn ($get) => $get('key') === 'journey'),
         ]);
     }
 
@@ -427,6 +549,11 @@ class SectionResource extends Resource
                         'danger' => 'pricing',
                         'secondary' => 'faq',
                         'info' => 'cta_banner',
+                        'gray' => 'about_hero',
+                        'emerald' => 'about_counts',
+                        'rose' => 'heart',
+                        'cyan' => 'gallery',
+                        'teal' => 'journey',
                     ]),
                 Tables\Columns\TextColumn::make('heading')
                     ->label('Heading')
@@ -456,6 +583,11 @@ class SectionResource extends Resource
                         'pricing' => 'Pricing Section',
                         'faq' => 'FAQ Section',
                         'cta_banner' => 'CTA Banner',
+                        'about_hero' => 'About Hero Section',
+                        'about_counts' => 'About Counts Section',
+                        'heart' => 'Heart Section',
+                        'gallery' => 'Gallery Section',
+                        'journey' => 'Journey Section',
                     ]),
                 SelectFilter::make('page_id')
                     ->label('Page')

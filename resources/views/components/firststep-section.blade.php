@@ -5,7 +5,7 @@
     $defaultTitle = 'Take the First Step Toward Better Health';
     $defaultDescription = 'Book your appointment with our trusted doctors today and get the right care without long waits.';
     $defaultCtaLabel = 'Book a Consultant';
-    $defaultCtaUrl = '#';
+    $defaultCtaUrl = '/contact';
     
     $title = $content['title'] ?? $defaultTitle;
     $description = $content['description'] ?? $defaultDescription;

@@ -132,14 +132,18 @@
         width: 100%;
         max-width: 480px;
         height: auto;
-        font-size: 16px;
+        font-size: 18px;
     }
 }
 
 @media (max-width: 768px) {
     .firststep-section {
-        height: auto;
+        height: 386px;
         padding: 40px 0;
+    }
+
+    .firststep-container {
+        height: 386px;
     }
 
     .firststep-container {
@@ -148,31 +152,25 @@
 
     .firststep-background {
         width: 100%;
-        height: 280px;
+        height: 386px;
         padding: 40px 30px;
-        justify-content: center;
-        text-align: center;
     }
 
     .firststep-content {
-        align-items: center;
-        text-align: center;
         max-width: 100%;
     }
 
     .firststep-title {
-        width: 100%;
-        max-width: 350px;
+        width: 280px;
         height: auto;
-        font-size: 28px;
-        line-height: 130%;
+        font-size: 32px;
     }
 
     .firststep-description {
         width: 100%;
         max-width: 350px;
         height: auto;
-        font-size: 15px;
+        font-size: 18px;
         line-height: 140%;
     }
 
@@ -186,11 +184,12 @@
 
 @media (max-width: 480px) {
     .firststep-container {
-        padding: 0 15px;
+        margin-top: 20px;
+        padding: 0 28px;
     }
 
     .firststep-background {
-        height: 250px;
+        height: 386px;
         padding: 30px 20px;
         border-radius: 8px;
     }
@@ -201,13 +200,12 @@
 
     .firststep-title {
         max-width: 280px;
-        font-size: 24px;
-        line-height: 125%;
+        font-size: 32px;
     }
 
     .firststep-description {
         max-width: 280px;
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .firststep-btn {

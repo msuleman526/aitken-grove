@@ -83,13 +83,13 @@
 .contact-info-item {
     width: 593px;
     height: 80px;
-    background: rgba(255, 255, 255, 0.4);
+    background: rgba(255, 255, 255, 0.25);
     border-radius: 12px;
     display: flex;
     align-items: center;
     gap: 16px;
     padding: 16px 20px;
-    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
 }
 
 .contact-icon {
@@ -211,7 +211,7 @@
 .form-submit-btn {
     height: 56px;
     background: #E62D5B;
-    border-radius: 8px;
+    border-radius: 20px;
     border: none;
     font-family: 'Inter';
     font-style: normal;
@@ -264,22 +264,22 @@
     .hero-contact-section {
         height: auto;
         min-height: 100vh;
-        padding: 120px 0 60px;
+        padding: 140px 20px 60px;
     }
 
     .hero-contact-container {
         grid-template-columns: 1fr;
-        gap: 60px;
+        gap: 0px;
         padding: 0 16px;
     }
 
     .left-column {
         max-width: 100%;
-        order: 2;
+        order: 1;
     }
 
     .right-column {
-        order: 1;
+        order: 2;
     }
 
     .contact-title {
@@ -316,16 +316,21 @@
 
 @media (max-width: 480px) {
     .hero-contact-section {
-        padding: 100px 0 40px;
+        padding: 160px 10px 40px;
+    }
+
+    .contact-button {
+        width: 117px;
+        height: 48px;
+        font-size: 16px;
     }
 
     .contact-title {
-        font-size: 28px;
-        line-height: 34px;
+        font-size: 40px;
     }
 
     .contact-description {
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .contact-text {

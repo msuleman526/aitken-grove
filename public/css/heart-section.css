@@ -1,0 +1,192 @@
+/* Heart Section Styling */
+.heart-section {
+    background-color: #FFFFFF;
+    height: 651px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0 20px;
+}
+
+.heart-container {
+    max-width: 1440px;
+    width: 100%;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    align-items: center;
+}
+
+/* Left Column - Image */
+.heart-image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.heart-image-main {
+    width: 636px;
+    height: 531px;
+    object-fit: cover;
+    border-radius: 16px;
+}
+
+/* Right Column - Content */
+.heart-content {
+    max-width: 600px;
+}
+
+.heart-title {
+    margin: 0 0 32px 0;
+    line-height: 1.2;
+}
+
+.heart-title .title-part-1 {
+    font-family: 'Cal Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 120%;
+    color: #000000;
+}
+
+.heart-title .title-part-2 {
+    font-family: 'Cal Sans';
+    font-style: normal;
+    font-weight: 600;
+    font-size: 40px;
+    line-height: 120%;
+    color: #E62D5B;
+}
+
+.heart-description {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 150%;
+    color: #000000;
+    margin: 0 0 32px 0;
+    max-width: 600px;
+}
+
+.heart-points {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.heart-point {
+    display: flex;
+    align-items: flex-start;
+    gap: 16px;
+}
+
+.heart-point-icon {
+    width: 24px;
+    height: 24px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.point-text {
+    font-family: 'Inter';
+    font-style: normal;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 150%;
+    color: #000000;
+    flex: 1;
+}
+
+/* Responsive Design */
+@media (max-width: 1200px) {
+    .heart-container {
+        gap: 40px;
+        padding: 0 20px;
+    }
+
+    .heart-image-main {
+        width: 500px;
+        height: 417px;
+    }
+
+    .heart-title .title-part-1,
+    .heart-title .title-part-2 {
+        font-size: 36px;
+    }
+
+    .heart-description {
+        font-size: 16px;
+    }
+}
+
+@media (max-width: 768px) {
+    .heart-section {
+        height: auto;
+        padding: 60px 20px;
+    }
+
+    .heart-container {
+        grid-template-columns: 1fr;
+        gap: 40px;
+        text-align: center;
+    }
+
+    .heart-image {
+        order: 1;
+    }
+
+    .heart-content {
+        order: 2;
+        max-width: 100%;
+    }
+
+    .heart-image-main {
+        width: 100%;
+        max-width: 450px;
+        height: auto;
+        aspect-ratio: 636/531;
+    }
+
+    .heart-title .title-part-1,
+    .heart-title .title-part-2 {
+        font-size: 32px;
+    }
+
+    .heart-description {
+        font-size: 16px;
+        text-align: left;
+    }
+
+    .heart-points {
+        text-align: left;
+    }
+}
+
+@media (max-width: 480px) {
+    .heart-section {
+        padding: 40px 16px;
+    }
+
+    .heart-container {
+        gap: 30px;
+    }
+
+    .heart-title .title-part-1,
+    .heart-title .title-part-2 {
+        font-size: 28px;
+    }
+
+    .heart-description {
+        font-size: 15px;
+    }
+
+    .point-text {
+        font-size: 15px;
+    }
+
+    .heart-points {
+        gap: 16px;
+    }
+}

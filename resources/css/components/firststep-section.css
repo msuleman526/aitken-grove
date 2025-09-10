@@ -159,18 +159,17 @@
     }
 
     .firststep-title {
-        width: 100%;
+        width: 280px;
         max-width: 350px;
         height: auto;
-        font-size: 28px;
-        line-height: 130%;
+        font-size: 32px;
     }
 
     .firststep-description {
         width: 100%;
         max-width: 350px;
         height: auto;
-        font-size: 15px;
+        font-size: 18px;
         line-height: 140%;
     }
 
@@ -199,13 +198,13 @@
 
     .firststep-title {
         max-width: 280px;
-        font-size: 24px;
+        font-size: 32px;
         line-height: 125%;
     }
 
     .firststep-description {
         max-width: 280px;
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .firststep-btn {

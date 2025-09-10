@@ -19,7 +19,7 @@
         
         <!-- Center - CTA Button -->
         <div class="consultant-cta">
-            <a href="{{ $page->hero_cta_url ?? '#book-appointment' }}" class="consultant-btn">
+            <a href="/contact" class="consultant-btn">
                 {{ $page->hero_cta_label ?? 'Book Consultation' }}
             </a>
         </div>
