@@ -46,6 +46,10 @@
     color: #000000;
 }
 
+.specialists-content {
+    gap: 10px;
+}
+
 .title-primary {
     color: #E62D5B;
     margin-left: 3px;
@@ -208,6 +212,7 @@
     }
 
     .testimonials-header {
+        order: 1;
         flex-direction: column;
         align-items: center;
         text-align: center;
@@ -223,11 +228,10 @@
     .title-primary {
         margin-left: 0;
         display: block;
-        margin-top: 4px;
+        margin-left: 4px;
     }
 
     .testimonials-cards {
-        flex-direction: column;
         align-items: center;
         gap: 20px;
     }
@@ -252,7 +256,7 @@
 @media (max-width: 480px) {
     .testimonials-section {
         min-height: 440px;
-        padding: 50px 0;
+        padding: 40px 0;
     }
 
     .testimonials-container {

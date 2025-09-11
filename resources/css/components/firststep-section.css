@@ -150,6 +150,7 @@
         padding: 40px 30px;
         justify-content: center;
         text-align: center;
+        background-image: url('/images/step-background1.png');
     }
 
     .firststep-content {
@@ -189,7 +190,7 @@
     .firststep-background {
         height: 250px;
         padding: 30px 20px;
-        border-radius: 8px;
+        border-radius: 15px;
     }
 
     .firststep-content {

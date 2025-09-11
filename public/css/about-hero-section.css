@@ -90,7 +90,7 @@
 
     .about-hero-title {
         font-size: 50px;
-        line-height: 60px;
+        line-height: 45px;
     }
 
     .about-hero-description {
@@ -101,24 +101,23 @@
 @media (max-width: 768px) {
     .about-hero-section {
         height: auto;
-        padding: 120px 20px 60px;
+        padding: 20px 20px 60px;
     }
 
     .about-hero-container {
         grid-template-columns: 1fr;
         gap: 40px;
-        text-align: center;
-        padding: 0 20px;
+        padding: 0 25px;
     }
 
     .about-hero-left {
         order: 1;
-        align-items: center;
         max-width: 100%;
     }
 
     .about-hero-right {
         order: 2;
+        margin-bottom: -40px;
         justify-content: center;
     }
 
@@ -129,24 +128,23 @@
     }
 
     .about-hero-title {
-        font-size: 36px;
-        line-height: 44px;
+        font-size: 40px;
     }
 
     .about-hero-description {
-        font-size: 16px;
+        font-size: 18px;
         max-width: 100%;
     }
 }
 
 @media (max-width: 480px) {
     .about-hero-section {
-        padding: 100px 16px 40px;
+        padding: 0px 16px 40px;
     }
 
     .about-hero-container {
-        gap: 30px;
-        padding: 0 16px;
+        gap: 20px;
+        padding: 0 14px;
     }
 
     .about-hero-button {
@@ -156,11 +154,10 @@
     }
 
     .about-hero-title {
-        font-size: 28px;
-        line-height: 34px;
+        font-size: 40px;
     }
 
     .about-hero-description {
-        font-size: 14px;
+        font-size: 18px;
     }
 }

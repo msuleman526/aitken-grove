@@ -96,14 +96,13 @@
     font-size: 16px;
     line-height: 150%;
     color: #000000;
-    flex: 1;
 }
 
 /* Responsive Design */
 @media (max-width: 1200px) {
     .heart-container {
         gap: 40px;
-        padding: 0 20px;
+        padding: 0 14px;
     }
 
     .heart-image-main {
@@ -127,10 +126,13 @@
         padding: 60px 20px;
     }
 
+    .heart-title {
+        margin: 0 0 10px 0;
+    }
+
     .heart-container {
         grid-template-columns: 1fr;
-        gap: 40px;
-        text-align: center;
+        gap: 30px;
     }
 
     .heart-image {
@@ -166,7 +168,7 @@
 
 @media (max-width: 480px) {
     .heart-section {
-        padding: 40px 16px;
+        padding: 40px 10px;
     }
 
     .heart-container {
@@ -175,11 +177,11 @@
 
     .heart-title .title-part-1,
     .heart-title .title-part-2 {
-        font-size: 28px;
+        font-size: 32px;
     }
 
     .heart-description {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .point-text {

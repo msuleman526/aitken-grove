@@ -85,7 +85,8 @@
 
 @media screen and (max-width: 768px) {
     .about-service {
-        height: 300px;
+        height: auto;
+        margin-bottom: -10px;
     }
 
     .about-service-container {
@@ -109,7 +110,7 @@
 
 @media screen and (max-width: 480px) {
     .about-service {
-        height: 280px;
+        height: auto;
     }
 
     .about-service-container {

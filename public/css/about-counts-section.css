@@ -29,7 +29,6 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 8px;
 }
 
 /* Number Styling */
@@ -65,7 +64,7 @@
 
     .count-box {
         width: 280px;
-        height: 95px;
+        height: 102px;
     }
 
     .count-number {
@@ -93,7 +92,7 @@
     .count-box {
         width: 100%;
         max-width: 312px;
-        height: 80px;
+        height: 75px;
     }
 
     .count-number {
@@ -117,7 +116,7 @@
     }
 
     .count-box {
-        height: 70px;
+        height: 75px;
     }
 
     .count-number {

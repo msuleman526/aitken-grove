@@ -35,7 +35,6 @@
     font-family: 'Cal Sans';
     font-style: normal;
     font-weight: 400;
-    ;
     font-size: 40px;
     line-height: 120%;
     margin: 0;
@@ -277,7 +276,7 @@
 @media (max-width: 768px) {
     .faces-section {
         height: auto;
-        padding: 60px 0;
+        padding: 35px 10px;
     }
 
     .faces-container {
@@ -286,7 +285,16 @@
     }
 
     .faces-title {
+        display: inline-flex;
         font-size: 32px;
+    }
+
+    .title-primary {
+        padding-left: 3px;
+    }
+
+    .faces-content {
+        gap: 10px;
     }
 
     .faces-description {
@@ -294,13 +302,13 @@
     }
 
     .faces-card {
-        width: 280px;
-        height: 330px;
+        width: 299px;
+        height: 350px;
     }
 
     .faces-info-card {
-        width: 240px;
-        height: 78px;
+        width: 260px;
+        height: 73px;
         padding: 14px;
     }
 
@@ -325,21 +333,21 @@
     }
 
     .faces-title {
-        font-size: 28px;
+        font-size: 32px;
     }
 
     .faces-description {
-        font-size: 14px;
+        font-size: 16px;
     }
 
     .faces-card {
-        width: 260px;
-        height: 310px;
+        width: 299px;
+        height: 350px;
     }
 
     .faces-info-card {
-        width: 220px;
-        height: 74px;
+        width: 260px;
+        height: 73px;
         padding: 12px;
     }
 

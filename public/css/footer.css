@@ -25,7 +25,7 @@
 }
 
 .consultant-image {
-    margin-bottom: 32px;
+    margin-bottom: 10px;
 }
 
 .consultant-image img {
@@ -41,12 +41,11 @@
     font-family: 'Cal Sans';
     font-style: normal;
     font-weight: 400;
-    ;
     font-size: 40px;
     line-height: 120%;
     text-align: center;
     color: #000000;
-    margin: 0 0 24px 0;
+    margin: 0 0 15px 0;
     display: block;
 }
 
@@ -65,7 +64,7 @@
     line-height: 150%;
     text-align: center;
     color: #000000;
-    margin: 0 auto 40px auto;
+    margin: 0 auto 15px auto;
 }
 
 .consultant-button {
@@ -203,8 +202,7 @@
 .footer-menu-title {
     font-family: 'Inter', sans-serif;
     font-style: normal;
-    font-weight: 400;
-    ;
+    font-weight: 500;
     font-size: 18px;
     line-height: 150%;
     color: #000000;
@@ -217,7 +215,7 @@
     margin: 0;
     display: flex;
     flex-direction: column;
-    gap: 12px;
+    gap: 9px;
 }
 
 .footer-menu-list li {
@@ -404,7 +402,6 @@
 
     /* Services columns stack on mobile */
     .services-columns {
-        flex-direction: column;
         gap: 20px;
     }
 
@@ -430,11 +427,6 @@
         font-size: 15px;
     }
 
-    .footer-logo img {
-        width: 250px;
-        height: auto;
-    }
-
     .consultant-cta-section {
         padding: 40px 20px;
     }
@@ -450,14 +442,14 @@
     }
 
     .consultant-title {
-        font-size: 28px;
+        font-size: 32px;
         flex-direction: column;
         height: auto;
         gap: 4px;
     }
 
     .consultant-description {
-        font-size: 15px;
+        font-size: 16px;
         padding: 0 10px;
     }
 
@@ -468,28 +460,24 @@
         font-size: 14px;
     }
 
-    .footer-logo img {
-        width: 200px;
-    }
-
     .footer-description {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .contact-item span {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .footer-menu-title {
-        font-size: 17px;
+        font-size: 16px;
     }
 
     .footer-menu-list a {
-        font-size: 15px;
+        font-size: 16px;
     }
 
     .footer-copyright,
     .footer-legal a {
-        font-size: 14px;
+        font-size: 16px;
     }
 }

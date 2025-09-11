@@ -8,8 +8,10 @@ function initTestimonialsCarousel() {
     const cardsContainer = container?.querySelector('.testimonials-cards');
     const prevBtn = document.getElementById('testimonials-prev');
     const nextBtn = document.getElementById('testimonials-next');
+    const prevBtnMobile = document.getElementById('testimonials-prev-mobile');
+    const nextBtnMobile = document.getElementById('testimonials-next-mobile');
     
-    if (!cardsContainer || !prevBtn || !nextBtn) return;
+    if (!cardsContainer || (!prevBtn && !prevBtnMobile) || (!nextBtn && !nextBtnMobile)) return;
     
     const cards = cardsContainer.querySelectorAll('.testimonials-card');
     if (cards.length === 0) return;
@@ -26,24 +28,44 @@ function initTestimonialsCarousel() {
     
     function updateCarousel() {
         if (window.innerWidth <= 768) {
-            // Mobile: vertical stack, no transform needed
-            cardsContainer.style.transform = 'translateY(0)';
-            return;
+            // Mobile: horizontal scroll with full card width
+            const cardWidth = cardsContainer.querySelector('.testimonials-card')?.offsetWidth || 320;
+            const gap = 20;
+            const translateX = currentIndex * (cardWidth + gap);
+            cardsContainer.style.transform = `translateX(-${translateX}px)`;
+        } else {
+            const cardWidth = window.innerWidth <= 1200 ? 450 : 500;
+            const gap = 24;
+            const translateX = currentIndex * (cardWidth + gap);
+            cardsContainer.style.transform = `translateX(-${translateX}px)`;
         }
-        
-        const cardWidth = window.innerWidth <= 1200 ? 450 : 500;
-        const gap = 24;
-        const translateX = currentIndex * (cardWidth + gap);
-        cardsContainer.style.transform = `translateX(-${translateX}px)`;
         
         updateButtonStates();
     }
     
     function updateButtonStates() {
-        prevBtn.style.opacity = currentIndex === 0 ? '0.5' : '1';
-        nextBtn.style.opacity = currentIndex >= maxIndex ? '0.5' : '1';
-        prevBtn.disabled = currentIndex === 0;
-        nextBtn.disabled = currentIndex >= maxIndex;
+        const isFirst = currentIndex === 0;
+        const isLast = currentIndex >= maxIndex;
+        
+        // Update desktop buttons
+        if (prevBtn) {
+            prevBtn.style.opacity = isFirst ? '0.5' : '1';
+            prevBtn.disabled = isFirst;
+        }
+        if (nextBtn) {
+            nextBtn.style.opacity = isLast ? '0.5' : '1';
+            nextBtn.disabled = isLast;
+        }
+        
+        // Update mobile buttons
+        if (prevBtnMobile) {
+            prevBtnMobile.style.opacity = isFirst ? '0.5' : '1';
+            prevBtnMobile.disabled = isFirst;
+        }
+        if (nextBtnMobile) {
+            nextBtnMobile.style.opacity = isLast ? '0.5' : '1';
+            nextBtnMobile.disabled = isLast;
+        }
     }
     
     function goNext() {
@@ -74,8 +96,10 @@ function initTestimonialsCarousel() {
     }
     
     // Event Listeners
-    prevBtn.addEventListener('click', goPrev);
-    nextBtn.addEventListener('click', goNext);
+    if (prevBtn) prevBtn.addEventListener('click', goPrev);
+    if (nextBtn) nextBtn.addEventListener('click', goNext);
+    if (prevBtnMobile) prevBtnMobile.addEventListener('click', goPrev);
+    if (nextBtnMobile) nextBtnMobile.addEventListener('click', goNext);
     window.addEventListener('resize', handleResize);
     
     // Touch/Swipe support for mobile
@@ -124,19 +148,24 @@ function initTestimonialsCarousel() {
 // Auto-play functionality (optional)
 function startTestimonialsAutoplay(interval = 5000) {
     const nextBtn = document.getElementById('testimonials-next');
+    const nextBtnMobile = document.getElementById('testimonials-next-mobile');
     const prevBtn = document.getElementById('testimonials-prev');
+    const prevBtnMobile = document.getElementById('testimonials-prev-mobile');
     
-    if (!nextBtn || !prevBtn) return;
+    if ((!nextBtn && !nextBtnMobile) || (!prevBtn && !prevBtnMobile)) return;
     
     let autoplayTimer;
     
     function startAutoplay() {
         autoplayTimer = setInterval(() => {
-            if (!nextBtn.disabled) {
-                nextBtn.click();
-            } else {
+            const activeNextBtn = window.innerWidth <= 768 ? nextBtnMobile : nextBtn;
+            const activePrevBtn = window.innerWidth <= 768 ? prevBtnMobile : prevBtn;
+            
+            if (activeNextBtn && !activeNextBtn.disabled) {
+                activeNextBtn.click();
+            } else if (activePrevBtn) {
                 // Loop back to start
-                prevBtn.click();
+                activePrevBtn.click();
             }
         }, interval);
     }

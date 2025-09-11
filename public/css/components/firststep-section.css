@@ -152,6 +152,7 @@
 
     .firststep-background {
         width: 100%;
+        background-image: url('/images/step-background1.png');
         height: 386px;
         padding: 40px 30px;
     }
@@ -191,7 +192,7 @@
     .firststep-background {
         height: 386px;
         padding: 30px 20px;
-        border-radius: 8px;
+        border-radius: 15px;
     }
 
     .firststep-content {

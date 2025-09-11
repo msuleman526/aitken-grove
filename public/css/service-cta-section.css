@@ -16,6 +16,7 @@
     padding: 0 45px;
 }
 
+
 .service-cta-background {
     width: 1320px;
     height: 346px;
@@ -142,21 +143,22 @@
         padding: 40px 0;
     }
 
+    .service-cta-background {
+        background-image: url('/images/step-background1.png');
+    }
+
     .service-cta-container {
         padding: 0 20px;
     }
 
     .service-cta-background {
         width: 100%;
-        height: 280px;
+        height: 328px;
         padding: 40px 30px;
-        justify-content: center;
-        text-align: center;
     }
 
     .service-cta-content {
-        align-items: center;
-        text-align: center;
+        padding: 0px 10px;
         max-width: 100%;
     }
 
@@ -164,7 +166,7 @@
         width: 100%;
         max-width: 350px;
         height: auto;
-        font-size: 28px;
+        font-size: 32px;
         line-height: 130%;
     }
 
@@ -172,7 +174,7 @@
         width: 100%;
         max-width: 350px;
         height: auto;
-        font-size: 15px;
+        font-size: 18px;
         line-height: 140%;
     }
 
@@ -190,9 +192,9 @@
     }
 
     .service-cta-background {
-        height: 250px;
+        height: 328px;
         padding: 30px 20px;
-        border-radius: 8px;
+        border-radius: 15px;
     }
 
     .service-cta-content {
@@ -201,13 +203,13 @@
 
     .service-cta-title {
         max-width: 280px;
-        font-size: 24px;
+        font-size: 32px;
         line-height: 125%;
     }
 
     .service-cta-description {
         max-width: 280px;
-        font-size: 14px;
+        font-size: 18px;
     }
 
     .service-cta-btn {

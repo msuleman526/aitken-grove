@@ -31,7 +31,6 @@
     font-family: 'Cal Sans';
     font-style: normal;
     font-weight: 400;
-    ;
     font-size: 40px;
     line-height: 120%;
     margin: 0;
@@ -167,14 +166,6 @@
         margin: 0 auto;
     }
 
-    .trust-title {
-        text-align: center;
-    }
-
-    .trust-description {
-        text-align: center;
-    }
-
     .trust-image {
         order: -1;
         max-height: 400px;
@@ -190,12 +181,22 @@
         height: auto;
     }
 
+    .trust-content {
+        order: 1;
+        gap: 15px;
+    }
+
+    .trust-image {
+        order: 2
+    }
+
     .trust-container {
         padding: 40px 20px;
         gap: 30px;
     }
 
     .trust-title {
+        display: inline-flex;
         font-size: 32px;
         line-height: 120%;
         white-space: normal;
@@ -236,17 +237,18 @@
     }
 
     .trust-image {
-        max-height: 300px;
+        margin-top: 10px;
+        max-height: 342px;
     }
 
     .trust-main-image {
-        max-height: 300px;
+        max-height: 400px;
     }
 }
 
 @media (max-width: 480px) {
     .trust-container {
-        padding: 30px 15px;
+        padding: 30px 25px;
     }
 
     .trust-title {
@@ -284,10 +286,11 @@
     }
 
     .trust-image {
-        max-height: 250px;
+        margin-top: 10px;
+        max-height: 342px;
     }
 
     .trust-main-image {
-        max-height: 250px;
+        max-height: 400px;
     }
 }

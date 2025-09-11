@@ -27,7 +27,7 @@
 
 <section class="testimonials-section">
     <div class="testimonials-container">
-        <!-- Title Section with Navigation -->
+        <!-- Title Section -->
         <div class="testimonials-header">
             <div class="testimonials-title-container">
                 <h2 class="testimonials-title">
@@ -35,7 +35,8 @@
                     <span class="title-primary">{{ $subtitle }}</span>
                 </h2>
             </div>
-            <div class="testimonials-nav">
+            <!-- Navigation for desktop only -->
+            <div class="testimonials-nav testimonials-nav-desktop">
                 <button class="testimonials-nav-btn" id="testimonials-prev" aria-label="Previous testimonials">
                     <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
@@ -64,6 +65,20 @@
                     </div>
                 @endforeach
             </div>
+        </div>
+        
+        <!-- Navigation for mobile only -->
+        <div class="testimonials-nav testimonials-nav-mobile">
+            <button class="testimonials-nav-btn" id="testimonials-prev-mobile" aria-label="Previous testimonials">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M15 18L9 12L15 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
+            <button class="testimonials-nav-btn" id="testimonials-next-mobile" aria-label="Next testimonials">
+                <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M9 18L15 12L9 6" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </button>
         </div>
     </div>
 </section>
@@ -123,6 +138,21 @@
     display: flex;
     gap: 16px;
     align-items: center;
+}
+
+.testimonials-nav-mobile {
+    display: none;
+    visibility: hidden;
+    position: absolute;
+    left: -9999px;
+    justify-content: center;
+    margin-top: 30px;
+}
+
+.testimonials-nav-desktop {
+    display: flex;
+    visibility: visible;
+    position: static;
 }
 
 .testimonials-nav-btn {
@@ -198,7 +228,7 @@
     font-size: 16px;
     line-height: 150%;
     color: #000000;
-    margin: 0 0 24px 0;
+    margin: 0 0 13px 0;
     flex: 1;
     overflow: hidden;
 }
@@ -260,28 +290,37 @@
     .testimonials-container {
         padding: 0 20px;
     }
+
+    .testimonials-scroll-container {
+        order: 2;
+    }
     
     .testimonials-header {
+        order: 1;
         flex-direction: column;
         align-items: center;
         text-align: center;
         margin-bottom: 40px;
-        gap: 24px;
+        gap: 0;
     }
     
     .testimonials-title {
         font-size: 32px;
         text-align: center;
+        margin-bottom: 0;
+    }
+
+    .specialists-content{
+        gap: 10px;
     }
     
     .title-primary {
         margin-left: 0;
         display: block;
-        margin-top: 4px;
+        margin-left: 4px;
     }
     
     .testimonials-cards {
-        flex-direction: column;
         align-items: center;
         gap: 20px;
     }
@@ -293,8 +332,26 @@
         padding: 28px 24px;
     }
     
-    .testimonials-nav {
-        order: -1;
+    .testimonials-nav-desktop {
+        display: none !important;
+        visibility: hidden !important;
+        position: absolute !important;
+        left: -9999px !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+    
+    .testimonials-nav-mobile {
+        order: 3;
+        display: flex !important;
+        visibility: visible !important;
+        position: static !important;
+        left: auto !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        justify-content: center;
+        margin-top: 30px;
+        padding: 20px !important;
     }
     
     .testimonials-nav-btn {
@@ -306,7 +363,7 @@
 @media (max-width: 480px) {
     .testimonials-section {
         min-height: 440px;
-        padding: 50px 0;
+        padding: 40px 0;
     }
     
     .testimonials-container {
@@ -333,6 +390,28 @@
     
     .testimonials-role {
         font-size: 13px;
+    }
+    
+    .testimonials-nav-desktop {
+        display: none !important;
+        visibility: hidden !important;
+        position: absolute !important;
+        left: -9999px !important;
+        opacity: 0 !important;
+        pointer-events: none !important;
+    }
+    
+    .testimonials-nav-mobile {
+        order: 3;
+        display: flex !important;
+        visibility: visible !important;
+        position: static !important;
+        left: auto !important;
+        opacity: 1 !important;
+        pointer-events: auto !important;
+        justify-content: center;
+        margin-top: 30px;
+        padding: 20px !important;
     }
 }
 </style>

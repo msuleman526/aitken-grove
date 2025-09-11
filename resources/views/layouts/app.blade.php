@@ -209,10 +209,10 @@
             background: white;
             border: none;
             border-radius: 8px;
-            width: 48px;
-            height: 48px;
+            width: 40px;
+            height: 40px;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
             transition: all 0.3s ease;
         }
         
@@ -248,18 +248,23 @@
         .mobile-drawer {
             position: fixed;
             top: -20px;
-            right: -400px;
+            right: -20px;
             width: 320px;
             height: 100vh;
             background: white;
             box-shadow: -4px 0 20px rgba(0, 0, 0, 0.15);
-            transition: right 0.3s ease;
             z-index: 10000;
             overflow-y: auto;
+            display: none;
         }
         
         .mobile-drawer.active {
-            right: -20px;
+            display: block !important;
+        }
+        
+        /* Remove debug border */
+        .mobile-drawer:not(.active) {
+            /* border: 3px solid red !important; */
         }
         
         .mobile-drawer-content {
@@ -366,6 +371,7 @@
             left: 0;
             width: 100%;
             height: 100%;
+            background: rgba(0, 0, 0, 0.5);
             opacity: 0;
             visibility: hidden;
             transition: all 0.3s ease;
@@ -374,7 +380,7 @@
         
         .mobile-overlay.active {
             opacity: 1;
-            visibility: visible;
+            visibility: hidden;
         }
         
         /* Hide mobile drawer on desktop - greater than 940px */
@@ -426,9 +432,11 @@
                 width: calc(100% - 20px);
             }
             
+            
             .header {
                 padding: 0 16px;
                 height: 80px;
+                background: rgba(255, 255, 255, 0.50);
             }
             
             .mobile-drawer {

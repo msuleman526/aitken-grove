@@ -115,7 +115,11 @@
 
 @media (max-width: 768px) {
     .journey-section {
-        padding: 40px 16px;
+        padding: 0px 20px;
+    }
+
+    .journey-left-column {
+        padding-left: 0px;
     }
 
     .journey-container {
@@ -129,8 +133,8 @@
     }
 
     .journey-title {
-        font-size: 28px;
-        text-align: center;
+        font-size: 32px;
+        text-align: left;
     }
 
     .journey-image {
@@ -146,7 +150,7 @@
 
 @media (max-width: 480px) {
     .journey-section {
-        padding: 30px 12px;
+        padding: 0px 20px;
     }
 
     .journey-container {
@@ -158,7 +162,7 @@
     }
 
     .journey-title {
-        font-size: 24px;
+        font-size: 32px;
     }
 
     .journey-image {
@@ -166,6 +170,6 @@
     }
 
     .journey-description {
-        font-size: 14px;
+        font-size: 16px;
     }
 }
