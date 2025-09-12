@@ -106,8 +106,8 @@
     }
 
     .heart-image-main {
-        width: 500px;
-        height: 417px;
+        width: 100%;
+        height: 100%;
     }
 
     .heart-title .title-part-1,
@@ -166,7 +166,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
     .heart-section {
         padding: 40px 10px;
     }

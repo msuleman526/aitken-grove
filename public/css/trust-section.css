@@ -246,7 +246,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
     .trust-container {
         padding: 30px 25px;
     }

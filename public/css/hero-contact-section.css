@@ -314,7 +314,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
     .hero-contact-section {
         padding: 160px 10px 40px;
     }

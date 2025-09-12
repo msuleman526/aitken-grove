@@ -326,7 +326,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
     .faces-container {
         padding: 0 15px;
         gap: 30px;

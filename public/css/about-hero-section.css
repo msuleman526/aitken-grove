@@ -137,7 +137,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
     .about-hero-section {
         padding: 0px 16px 40px;
     }

@@ -12,7 +12,7 @@
     width: 100%;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    gap: 50px;
     align-items: center;
     height: 100%;
 }
@@ -25,7 +25,7 @@
 }
 
 .caring-title {
-    width: 630px;
+    width: 100%;
     height: 96px;
     font-family: 'Cal Sans';
     font-style: normal;
@@ -47,7 +47,7 @@
 }
 
 .caring-description {
-    width: 630px;
+    width: 100%;
     height: 81px;
     font-family: 'Inter';
     font-style: normal;
@@ -101,12 +101,12 @@
 }
 
 .image-column-left {
-    height: 435px;
+    height: 100%;
 }
 
 .caring-image-main {
-    width: 305px;
-    height: 435px;
+    width: 100%;
+    height: 100%;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -115,13 +115,13 @@
     display: flex;
     flex-direction: column;
     gap: 20px;
-    height: 435px;
+    height: 100%;
 }
 
 .caring-image-top,
 .caring-image-bottom {
-    width: 305px;
-    height: 207.5px;
+    width: 100%;
+    height: 50%;
     object-fit: cover;
     border-radius: 8px;
 }
@@ -130,8 +130,7 @@
 @media (max-width: 1200px) {
     .caring-section {
         padding: 0 30px;
-        height: auto;
-        min-height: 555px;
+        height: 1000px;
     }
 
     .caring-container {
@@ -144,7 +143,6 @@
         width: 100%;
         height: auto;
         max-width: 630px;
-        margin: 0 auto;
     }
 
     .caring-images {
@@ -152,23 +150,23 @@
         gap: 15px;
         max-width: 630px;
         margin: 0 auto;
-        height: auto;
+        height: 100%;
     }
 
     .caring-image-main {
         width: 100%;
-        height: 300px;
+        height: 100%;
     }
 
     .image-column-right {
         gap: 15px;
-        height: auto;
+        height: 100%;
     }
 
     .caring-image-top,
     .caring-image-bottom {
         width: 100%;
-        height: 142.5px;
+        height: 50%;
     }
 }
 
@@ -216,18 +214,16 @@
     }
 
     .image-column-right {
-        grid-template-columns: 1fr 1fr;
-        display: grid;
         gap: 15px;
     }
 
     .caring-image-top,
     .caring-image-bottom {
-        height: 150px;
+        height: 50%;
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
     .caring-section {
         padding: 30px 25px;
     }
@@ -263,6 +259,6 @@
 
     .caring-image-top,
     .caring-image-bottom {
-        height: 135px;
+        height: 50%;
     }
 }

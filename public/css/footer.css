@@ -137,11 +137,11 @@
 
 /* Right Column - 50% width */
 .footer-right {
-    flex: 0 0 50%;
+    flex: 0 0 47%;
     width: 50%;
     max-width: 50%;
     display: flex;
-    gap: 60px;
+    gap: 25px;
     justify-content: flex-start;
 }
 
@@ -196,7 +196,7 @@
 }
 
 .footer-menu {
-    min-width: 200px;
+    min-width: auto;
 }
 
 .footer-menu-title {
@@ -239,7 +239,7 @@
 
 /* Services Two-Column Layout */
 .services-menu.footer-menu {
-    min-width: 400px;
+    min-width: auto;
 }
 
 .services-columns {
@@ -355,7 +355,7 @@
     }
 
     .services-menu.footer-menu {
-        min-width: 350px;
+        min-width: auto;
     }
 }
 
@@ -436,7 +436,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
     .footer-container {
         padding: 0 15px;
     }
@@ -479,5 +479,23 @@
     .footer-copyright,
     .footer-legal a {
         font-size: 16px;
+    }
+}
+
+@media (max-width: 1250px) {
+    .services-columns {
+        display: block;
+    }
+}
+
+@media (max-width: 768px) {
+    .services-columns {
+        display: flex;
+    }
+}
+
+@media (max-width: 410px) {
+    .services-columns {
+        display: block;
     }
 }

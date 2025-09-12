@@ -183,7 +183,7 @@
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 440px) {
     .firststep-container {
         margin-top: 20px;
         padding: 0 28px;
