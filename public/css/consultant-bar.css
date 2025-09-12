@@ -27,6 +27,30 @@
     object-position: center;
 }
 
+/* Responsive Image Control */
+.consultant-bar-background .bar-mobile {
+    display: none;
+}
+
+.consultant-bar-background .bar-desktop {
+    display: block;
+}
+
+/* Mobile responsive changes (less than 768px) */
+@media screen and (max-width: 767px) {
+    .consultant-bar {
+        height: 166px !important;
+    }
+
+    .consultant-bar-background .bar-mobile {
+        display: block;
+    }
+
+    .consultant-bar-background .bar-desktop {
+        display: none;
+    }
+}
+
 .consultant-bar-content {
     position: relative;
     z-index: 10;
@@ -178,17 +202,26 @@
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
     .consultant-bar {
         height: auto;
-        min-height: 116px;
+        min-height: 166px;
         padding: 20px 0;
+        margin-top: -70px;
     }
 
     .consultant-bar-content {
         flex-direction: column;
         gap: 20px;
         padding: 0 15px;
+    }
+
+    .opening-hours {
+        margin-top: 60px;
+    }
+
+    .contact-info {
+        margin-top: 0px;
     }
 
     .opening-hours,
@@ -208,7 +241,7 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 
     .opening-hours .text,
     .contact-item .text {
@@ -216,9 +249,24 @@
     }
 
     .consultant-btn {
-        font-size: 14px;
+        font-size: 13px;
         height: 48px;
     }
+
+    .consultant-cta {
+        left: calc(45% - 56px);
+        top: 2px;
+        width: 155px;
+    }
+
+    .consultant-bar-background {
+        height: 166px;
+    }
+
+    .consultant-bar-background .bar-mobile {
+        height: 166px;
+    }
+
 
     .opening-hours .icon,
     .contact-item .icon {
@@ -227,7 +275,7 @@
     }
 
     .contact-info {
-        flex-direction: column;
+        flex-direction: row;
         gap: 10px;
     }
 }

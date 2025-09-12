@@ -8,7 +8,12 @@
     <div class="hero-content">
         <!-- Aitken Grove Text Logo -->
         <div class="hero-logo">
-            <img src="/images/aitken_long_txt.png" alt="Aitken Grove">
+            <img src="/images/aitken_long_txt.png" 
+                 alt="Aitken Grove"
+                 class="logo-desktop">
+            <img src="/images/aitken_long_txt1.png" 
+                 alt="Aitken Grove"
+                 class="logo-mobile">
         </div>
         
         <!-- Hero Main Content -->
@@ -31,7 +36,8 @@
             
             <!-- Center - Girl Image -->
             <div class="hero-girl">
-                <img src="/images/hero-girl.png" alt="Healthcare Professional">
+                <img src="/images/hero-girl.png" class="hero-desktop" alt="Healthcare Professional">
+                <img src="/images/hero-girl1.png" class="hero-mobile" alt="Healthcare Professional">
             </div>
             
             <!-- Right Side - Stats Boxes -->

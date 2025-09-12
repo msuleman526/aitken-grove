@@ -170,11 +170,17 @@
     }
 }
 
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 768px) {
     .consultant-bar {
         height: auto;
         min-height: 116px;
         padding: 20px 0;
+    }
+
+    .consultant-cta {
+        left: calc(45% - 56px);
+        top: 2px;
+        width: 155px;
     }
 
     .consultant-bar-content {
@@ -200,15 +206,23 @@
     }
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 768px) {
 
     .opening-hours .text,
     .contact-item .text {
         font-size: 14px;
     }
 
+    .consultant-bar-background {
+        height: 166px;
+    }
+
+    .consultant-bar-background .bar-mobile {
+        height: 166px;
+    }
+
     .consultant-btn {
-        font-size: 14px;
+        font-size: 13px;
         height: 48px;
     }
 

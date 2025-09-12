@@ -2,7 +2,8 @@
 
 <section class="consultant-bar">
     <div class="consultant-bar-background">
-        <img src="/images/bar.png" alt="Consultant Bar Background">
+        <img src="/images/bar.png" alt="Consultant Bar Background" class="bar-desktop">
+        <img src="/images/bar1.png" alt="Consultant Bar Background" class="bar-mobile">
     </div>
     
     <div class="consultant-bar-content">

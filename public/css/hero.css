@@ -47,6 +47,25 @@
     max-height: 132px;
 }
 
+/* Responsive Logo Styles */
+.hero-logo .logo-mobile {
+    display: none;
+}
+
+.hero-logo .logo-desktop {
+    display: block;
+}
+
+@media (max-width: 768px) {
+    .hero-logo .logo-mobile {
+        display: block;
+    }
+
+    .hero-logo .logo-desktop {
+        display: none;
+    }
+}
+
 .hero-main {
     display: flex;
     align-items: center;
@@ -66,11 +85,11 @@
     z-index: 20;
 }
 
+
 .hero-title {
     font-family: 'Cal Sans';
     font-style: normal;
     font-weight: 400;
-    ;
     font-size: 60px;
     line-height: 72px;
     color: #000000;
@@ -237,55 +256,81 @@
     color: #000000;
 }
 
-/* Responsive Design */
-@media (max-width: 1200px) {
+@media (max-width: 768px) {
+    .hero-content {
+        padding: 0px 20px 40px !important;
+        height: 100%;
+    }
+
+    .hero-desktop {
+        display: none;
+    }
+
+    .hero-mobile {
+        display: block;
+    }
+
     .hero-section {
-        height: auto;
-        min-height: 585px;
+        height: 869px;
     }
 
     .hero-main {
-        flex-direction: column !important;
-        text-align: center !important;
+        display: inherit;
     }
 
     .hero-girl {
-        position: relative !important;
-        left: auto !important;
-        top: auto !important;
-        bottom: auto !important;
-        transform: none !important;
-        height: auto !important;
-        width: auto !important;
+        bottom: 400px;
+        z-index: 15;
     }
 
-    .hero-girl img {
-        width: 400px !important;
-        height: auto !important;
-        object-fit: contain !important;
+    .hero-text {
+        z-index: 16;
+        position: absolute;
+        top: 80px;
     }
 
-    .hero-title {
-        font-size: 48px !important;
-        line-height: 60px !important;
+    .stat-box {
+        width: 112px;
+        height: 108px;
     }
-}
 
-@media (max-width: 768px) {
-    .hero-content {
-        padding: 0 15px 40px !important;
+    .hero-stats {
+        z-index: 16;
+        position: absolute;
+        bottom: 400px;
+        margin: auto;
+        max-width: 367px;
     }
 
     .hero-logo {
-        margin-top: 20px !important;
+        height: 184px;
+        margin-top: 92px;
+    }
+
+    .hero-background {
+        background-image: url('/images/hero-mobile.png');
+        background-repeat: no-repeat;
+        background-position: center;
+    }
+
+    .hero-main {
+        background: rgba(255, 255, 255, 0.5);
+        box-shadow: 10px 19px 30px rgb(255 255 255 / 100%);
+        padding: 0px 5px 0px;
     }
 
     .hero-logo img {
-        max-width: 90% !important;
+        max-width: 100% !important;
+        height: 184px;
+        max-height: 184px;
+    }
+
+    .hero-stats {
+        margin-top: 0px;
     }
 
     .hero-title {
-        font-size: 36px !important;
+        font-size: 40px !important;
         line-height: 44px !important;
     }
 
@@ -294,15 +339,20 @@
     }
 
     .hero-girl img {
-        width: 300px !important;
-        height: auto !important;
+        width: 100.5% !important;
+        height: 756px !important;
+        object-fit: contain !important;
     }
 
     .hero-stats {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        grid-gap: 15px !important;
-        justify-content: center !important;
+        display: inline-flex;
+        min-width: none;
+        min-height: none;
+        margin: auto;
+    }
+
+    .hero-section {
+        align-items: end;
     }
 
     .hero-stats .stat-box:nth-child(3) {
@@ -323,21 +373,16 @@
 
 @media (max-width: 480px) {
     .hero-title {
-        font-size: 28px !important;
-        line-height: 36px !important;
+        font-size: 40px !important;
+        line-height: 100% !important;
     }
 
     .hero-description {
-        font-size: 16px !important;
-    }
-
-    .stat-box {
-        width: 100px !important;
-        height: 100px !important;
+        font-size: 18px !important;
     }
 
     .stat-box img {
-        width: 60px !important;
-        height: 60px !important;
+        width: 64px !important;
+        height: 64px !important;
     }
 }
